@@ -12,7 +12,7 @@ namespace TestTaxi.Models
        
         public Status status { get; set; }
 
-        public virtual ValueTaximeter ValueTaximetr { get; set; }
+        public virtual ValueTaximeter ValueTaximeter { get; set; }
         public virtual LocationOrder LocationOrder { get; set; }
 
         public int? ClientID { get; set; }
