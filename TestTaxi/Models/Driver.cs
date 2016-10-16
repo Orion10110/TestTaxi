@@ -13,15 +13,14 @@ namespace TestTaxi.Models
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfEmployment { get; set; }
         public int? Category { get; set; }
-        public string GosNumber { get; set; }
+        public int? CarID { get; set; }
         public Driver()
         {
             this.Orders = new HashSet<Order>();
             this.Districts = new HashSet<District>();
         }
 
-
-
+        public virtual Car Car { get; set; }
         public virtual ICollection<District> Districts {get;set;}
         public virtual ICollection<Order> Orders { get; set; }
 

@@ -17,10 +17,9 @@ namespace TestTaxi.Models
 
         public int? ClientID { get; set; }
         public int? DriverID { get; set; }
-        public int? CarID { get; set; }
         public virtual Client Client { get; set; }
         public virtual Driver Driver { get; set; }
-        public virtual Car Car { get; set; }
+      
 
         public string ApplicationUserID { get; set; }
     }

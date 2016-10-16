@@ -201,7 +201,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610151857244_InitialCreate.cs" />
+    <Compile Include="Migrations\201610151857244_InitialCreate.Designer.cs">
+      <DependentUpon>201610151857244_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610152054436_AddRelationCar.cs" />
+    <Compile Include="Migrations\201610152054436_AddRelationCar.Designer.cs">
+      <DependentUpon>201610152054436_AddRelationCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Discount.cs" />
@@ -213,6 +223,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Street.cs" />
+    <Compile Include="Models\TypeCar.cs" />
     <Compile Include="Models\ValueTaximeter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -282,7 +293,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610151857244_InitialCreate.resx">
+      <DependentUpon>201610151857244_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610152054436_AddRelationCar.resx">
+      <DependentUpon>201610152054436_AddRelationCar.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
