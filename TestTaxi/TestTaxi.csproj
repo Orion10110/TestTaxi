@@ -198,6 +198,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Controllers\CarsController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TypeCarsController.cs" />
@@ -212,6 +214,14 @@
     <Compile Include="Migrations\201610152054436_AddRelationCar.cs" />
     <Compile Include="Migrations\201610152054436_AddRelationCar.Designer.cs">
       <DependentUpon>201610152054436_AddRelationCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610171848456_RelationLocAndOrder2.cs" />
+    <Compile Include="Migrations\201610171848456_RelationLocAndOrder2.Designer.cs">
+      <DependentUpon>201610171848456_RelationLocAndOrder2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610171850434_RelationLocAndOrder3.cs" />
+    <Compile Include="Migrations\201610171850434_RelationLocAndOrder3.Designer.cs">
+      <DependentUpon>201610171850434_RelationLocAndOrder3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -321,6 +331,11 @@
     <Content Include="Views\Cars\Create.cshtml" />
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Delete.cshtml" />
+    <Content Include="Views\Drivers\Index.cshtml" />
+    <Content Include="Views\Drivers\Details.cshtml" />
+    <Content Include="Views\Drivers\Create.cshtml" />
+    <Content Include="Views\Drivers\Edit.cshtml" />
+    <Content Include="Views\Drivers\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610151857244_InitialCreate.resx">
@@ -328,6 +343,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610152054436_AddRelationCar.resx">
       <DependentUpon>201610152054436_AddRelationCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610171848456_RelationLocAndOrder2.resx">
+      <DependentUpon>201610171848456_RelationLocAndOrder2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610171850434_RelationLocAndOrder3.resx">
+      <DependentUpon>201610171850434_RelationLocAndOrder3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -340,6 +361,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Brand\" />
+    <Folder Include="Views\Clients\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -47,5 +47,7 @@ namespace TestTaxi.Models
         public System.Data.Entity.DbSet<TestTaxi.Models.Brand> Brands { get; set; }
 
         public System.Data.Entity.DbSet<TestTaxi.Models.TypeCar> TypeCars { get; set; }
+
+        public System.Data.Entity.DbSet<TestTaxi.Models.Driver> Drivers { get; set; }
     }
 }
