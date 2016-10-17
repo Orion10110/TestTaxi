@@ -199,6 +199,7 @@
     <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\DiscountsController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -214,6 +215,10 @@
     <Compile Include="Migrations\201610152054436_AddRelationCar.cs" />
     <Compile Include="Migrations\201610152054436_AddRelationCar.Designer.cs">
       <DependentUpon>201610152054436_AddRelationCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610171812107_ChangedDiscount.cs" />
+    <Compile Include="Migrations\201610171812107_ChangedDiscount.Designer.cs">
+      <DependentUpon>201610171812107_ChangedDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201610171848456_RelationLocAndOrder2.cs" />
     <Compile Include="Migrations\201610171848456_RelationLocAndOrder2.Designer.cs">
@@ -235,6 +240,7 @@
     <Compile Include="Models\LocationOrder.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrdersController.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Street.cs" />
@@ -336,6 +342,17 @@
     <Content Include="Views\Drivers\Create.cshtml" />
     <Content Include="Views\Drivers\Edit.cshtml" />
     <Content Include="Views\Drivers\Delete.cshtml" />
+    <Content Include="Views\Discounts\Index.cshtml" />
+    <Content Include="Views\Discounts\Details.cshtml" />
+    <Content Include="Views\Discounts\Create.cshtml" />
+    <Content Include="Views\Discounts\Edit.cshtml" />
+    <Content Include="Views\Discounts\Delete.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610151857244_InitialCreate.resx">
@@ -343,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610152054436_AddRelationCar.resx">
       <DependentUpon>201610152054436_AddRelationCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610171812107_ChangedDiscount.resx">
+      <DependentUpon>201610171812107_ChangedDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610171848456_RelationLocAndOrder2.resx">
       <DependentUpon>201610171848456_RelationLocAndOrder2.cs</DependentUpon>
@@ -361,7 +381,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Brand\" />
-    <Folder Include="Views\Clients\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

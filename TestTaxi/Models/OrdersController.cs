@@ -6,130 +6,127 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using TestTaxi.Models;
 
-namespace TestTaxi.Controllers
+namespace TestTaxi.Models
 {
-    public class ClientsController : Controller
+    public class OrdersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Clients
-        public ActionResult Index(int page = 1)
+        // GET: Orders
+        public ActionResult Index()
         {
-            int pageSize = 10;
-            IEnumerable<Client> discountPerPages = db.Clients.Include(c => c.Discount).OrderBy(p => p.SecondName).Skip((page - 1) *
-                pageSize).Take(pageSize);
-            PageInfo pageInfo = new PageInfo
-            {
-                PageNumber = page,
-                PageSize = pageSize,
-                TotalItems = db.Clients.Count()
-            };
-            MyIndexViewModel<Client> ivm = new MyIndexViewModel<Client>
-            {
-                PageInfo = pageInfo,
-                Keeps = discountPerPages
-            };
-            return View(ivm);
+            var orders = db.Orders.Include(o => o.Client).Include(o => o.Driver).Include(o => o.LocationOrder).Include(o => o.ValueTaximeter);
+            return View(orders.ToList());
         }
-    
 
-        // GET: Clients/Details/5
+        // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Order order = db.Orders.Find(id);
+            if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(order);
         }
 
-        // GET: Clients/Create
+        // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id");
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName");
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName");
+            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber");
+            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id");
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: Orders/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Create([Bind(Include = "Id,status,ClientID,DriverID,ApplicationUserID")] Order order)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                db.Orders.Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName", order.ClientID);
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName", order.DriverID);
+            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber", order.Id);
+            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
+            return View(order);
         }
 
-        // GET: Clients/Edit/5
+        // GET: Orders/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Order order = db.Orders.Find(id);
+            if (order == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName", order.ClientID);
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName", order.DriverID);
+            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber", order.Id);
+            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
+            return View(order);
         }
 
-        // POST: Clients/Edit/5
+        // POST: Orders/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Edit([Bind(Include = "Id,status,ClientID,DriverID,ApplicationUserID")] Order order)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName", order.ClientID);
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName", order.DriverID);
+            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber", order.Id);
+            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
+            return View(order);
         }
 
-        // GET: Clients/Delete/5
+        // GET: Orders/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Order order = db.Orders.Find(id);
+            if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(order);
         }
 
-        // POST: Clients/Delete/5
+        // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            Order order = db.Orders.Find(id);
+            db.Orders.Remove(order);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
