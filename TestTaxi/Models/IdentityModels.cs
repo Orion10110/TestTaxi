@@ -28,7 +28,7 @@ namespace TestTaxi.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+        //ConnectionStringSql2008  DefaultConnection
         public DbSet<Car> Cars { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Discount> Discounts{ get; set; }
@@ -44,6 +44,8 @@ namespace TestTaxi.Models
             return new ApplicationDbContext();
         }
 
+        public System.Data.Entity.DbSet<TestTaxi.Models.Brand> Brands { get; set; }
 
+        public System.Data.Entity.DbSet<TestTaxi.Models.TypeCar> TypeCars { get; set; }
     }
 }
