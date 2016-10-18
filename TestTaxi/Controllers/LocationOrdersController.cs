@@ -10,125 +10,135 @@ using TestTaxi.Models;
 
 namespace TestTaxi.Controllers
 {
-    public class ClientsController : Controller
+    public class LocationOrdersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Clients
+        // GET: LocationOrders
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<Client> clientPerPages = db.Clients.Include(c => c.Discount).OrderBy(p => p.SecondName).Skip((page - 1) *
+            IEnumerable<LocationOrder> lOPerPages = db.LocationOrders.Include(l => l.Order).Include(l => l.StreetFrom).Include(l => l.StreetTo).
+                OrderBy(p => p.DateOrder).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Clients.Count()
+                TotalItems = db.LocationOrders.Count()
             };
-            MyIndexViewModel<Client> ivm = new MyIndexViewModel<Client>
+            MyIndexViewModel<LocationOrder> ivm = new MyIndexViewModel<LocationOrder>
             {
                 PageInfo = pageInfo,
-                Keeps = clientPerPages
+                Keeps = lOPerPages
             };
+
             return View(ivm);
         }
 
-        // GET: Clients/Details/5
+        // GET: LocationOrders/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            LocationOrder locationOrder = db.LocationOrders.Find(id);
+            if (locationOrder == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(locationOrder);
         }
 
-        // GET: Clients/Create
+        // GET: LocationOrders/Create
         public ActionResult Create()
         {
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id");
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID");
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name");
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name");
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: LocationOrders/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Create([Bind(Include = "Id,PhoneNumber,DateOrder,DateComeFrom,DateComeIn,AddressFrom,AddressTo,StreetFromID,StreetToID")] LocationOrder locationOrder)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                db.LocationOrders.Add(locationOrder);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", locationOrder.Id);
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetFromID);
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetToID);
+            return View(locationOrder);
         }
 
-        // GET: Clients/Edit/5
+        // GET: LocationOrders/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            LocationOrder locationOrder = db.LocationOrders.Find(id);
+            if (locationOrder == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", locationOrder.Id);
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetFromID);
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetToID);
+            return View(locationOrder);
         }
 
-        // POST: Clients/Edit/5
+        // POST: LocationOrders/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Edit([Bind(Include = "Id,PhoneNumber,DateOrder,DateComeFrom,DateComeIn,AddressFrom,AddressTo,StreetFromID,StreetToID")] LocationOrder locationOrder)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                db.Entry(locationOrder).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", locationOrder.Id);
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetFromID);
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetToID);
+            return View(locationOrder);
         }
 
-        // GET: Clients/Delete/5
+        // GET: LocationOrders/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            LocationOrder locationOrder = db.LocationOrders.Find(id);
+            if (locationOrder == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(locationOrder);
         }
 
-        // POST: Clients/Delete/5
+        // POST: LocationOrders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            LocationOrder locationOrder = db.LocationOrders.Find(id);
+            db.LocationOrders.Remove(locationOrder);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

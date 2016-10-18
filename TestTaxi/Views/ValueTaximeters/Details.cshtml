@@ -1,0 +1,42 @@
+﻿@model TestTaxi.Models.ValueTaximeter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ValueTaximeter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ApplicationUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.ApplicationUserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Назад", "Index")
+</p>

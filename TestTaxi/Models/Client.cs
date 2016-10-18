@@ -24,6 +24,7 @@ namespace TestTaxi.Models
         public string Patronymic { get; set; }
         [Display(Name = "Телефон")]
         public string PhoneNumber { get; set; }
+
         [HiddenInput(DisplayValue = false)]
         public int? DiscountID { get; set; }
 

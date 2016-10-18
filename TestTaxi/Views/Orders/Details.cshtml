@@ -1,0 +1,66 @@
+﻿@model TestTaxi.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationOrder.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationOrder.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValueTaximeter.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValueTaximeter.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUserID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Назад", "Index")
+</p>

@@ -27,14 +27,16 @@ namespace TestTaxi.Models
         public int? Category { get; set; }
         [HiddenInput(DisplayValue = false)]
         public int? CarID { get; set; }
+        [HiddenInput(DisplayValue = false)]
+        public int? DistricrID { get; set; }
         public Driver()
         {
             this.Orders = new HashSet<Order>();
-            this.Districts = new HashSet<District>();
+         //   this.Districts = new HashSet<District>();
         }
-
-       
-        public virtual ICollection<District> Districts {get;set;}
+        [Display(Name = "Район")]
+        public virtual District District { get; set; }
+       // public virtual ICollection<District> Districts {get;set;}
         public virtual ICollection<Order> Orders { get; set; }
 
     }

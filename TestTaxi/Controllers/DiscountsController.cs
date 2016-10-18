@@ -10,125 +10,121 @@ using TestTaxi.Models;
 
 namespace TestTaxi.Controllers
 {
-    public class ClientsController : Controller
+    public class DiscountsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Clients
+        // GET: Discounts
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<Client> clientPerPages = db.Clients.Include(c => c.Discount).OrderBy(p => p.SecondName).Skip((page - 1) *
+            IEnumerable<Discount> discountPerPages = db.Discounts.OrderBy(p => p.Name).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Clients.Count()
+                TotalItems = db.Discounts.Count()
             };
-            MyIndexViewModel<Client> ivm = new MyIndexViewModel<Client>
+            MyIndexViewModel<Discount> ivm = new MyIndexViewModel<Discount>
             {
                 PageInfo = pageInfo,
-                Keeps = clientPerPages
+                Keeps = discountPerPages
             };
             return View(ivm);
         }
 
-        // GET: Clients/Details/5
+        // GET: Discounts/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Discount discount = db.Discounts.Find(id);
+            if (discount == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(discount);
         }
 
-        // GET: Clients/Create
+        // GET: Discounts/Create
         public ActionResult Create()
         {
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id");
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: Discounts/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Create([Bind(Include = "Id,Name,Percent")] Discount discount)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                db.Discounts.Add(discount);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(discount);
         }
 
-        // GET: Clients/Edit/5
+        // GET: Discounts/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Discount discount = db.Discounts.Find(id);
+            if (discount == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(discount);
         }
 
-        // POST: Clients/Edit/5
+        // POST: Discounts/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Edit([Bind(Include = "Id,Name,Percent")] Discount discount)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                db.Entry(discount).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(discount);
         }
 
-        // GET: Clients/Delete/5
+        // GET: Discounts/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Discount discount = db.Discounts.Find(id);
+            if (discount == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(discount);
         }
 
-        // POST: Clients/Delete/5
+        // POST: Discounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            Discount discount = db.Discounts.Find(id);
+            db.Discounts.Remove(discount);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

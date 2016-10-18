@@ -15,10 +15,10 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Drivers
-        public ActionResult Index(int page=1)
+        public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<Driver> typesPerPages = db.Drivers.Include(d => d.Car).OrderBy(p => p.FirstName).Skip((page - 1) *
+            IEnumerable<Driver> typesPerPages = db.Drivers.Include(d => d.Car).Include(d=>d.District).OrderBy(p => p.FirstName).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
@@ -32,7 +32,7 @@ namespace TestTaxi.Controllers
                 Keeps = typesPerPages
             };
             return View(ivm);
-           
+          
         }
 
         // GET: Drivers/Details/5
@@ -62,7 +62,7 @@ namespace TestTaxi.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DateOfBirth,DateOfEmployment,Category,CarID")] Driver driver)
+        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DateOfBirth,DateOfEmployment,Category,CarID,DistricrID")] Driver driver)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace TestTaxi.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DateOfBirth,DateOfEmployment,Category,CarID")] Driver driver)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DateOfBirth,DateOfEmployment,Category,CarID,DistricrID")] Driver driver)
         {
             if (ModelState.IsValid)
             {

@@ -10,125 +10,121 @@ using TestTaxi.Models;
 
 namespace TestTaxi.Controllers
 {
-    public class ClientsController : Controller
+    public class DistrictsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Clients
+        // GET: Districts
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<Client> clientPerPages = db.Clients.Include(c => c.Discount).OrderBy(p => p.SecondName).Skip((page - 1) *
+            IEnumerable<District> districtPerPages = db.Districts.OrderBy(p => p.Name).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Clients.Count()
+                TotalItems = db.Districts.Count()
             };
-            MyIndexViewModel<Client> ivm = new MyIndexViewModel<Client>
+            MyIndexViewModel<District> ivm = new MyIndexViewModel<District>
             {
                 PageInfo = pageInfo,
-                Keeps = clientPerPages
+                Keeps = districtPerPages
             };
             return View(ivm);
         }
 
-        // GET: Clients/Details/5
-        public ActionResult Details(int? id)
+        // GET: Districts/Details/5
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            District district = db.Districts.Find(id);
+            if (district == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(district);
         }
 
-        // GET: Clients/Create
+        // GET: Districts/Create
         public ActionResult Create()
         {
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id");
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: Districts/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Create([Bind(Include = "Id,Name")] District district)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                db.Districts.Add(district);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(district);
         }
 
-        // GET: Clients/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Districts/Edit/5
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            District district = db.Districts.Find(id);
+            if (district == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(district);
         }
 
-        // POST: Clients/Edit/5
+        // POST: Districts/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Edit([Bind(Include = "Id,Name")] District district)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                db.Entry(district).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(district);
         }
 
-        // GET: Clients/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Districts/Delete/5
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            District district = db.Districts.Find(id);
+            if (district == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(district);
         }
 
-        // POST: Clients/Delete/5
+        // POST: Districts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            District district = db.Districts.Find(id);
+            db.Districts.Remove(district);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -10,125 +10,121 @@ using TestTaxi.Models;
 
 namespace TestTaxi.Controllers
 {
-    public class ClientsController : Controller
+    public class StreetsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Clients
+        // GET: Streets
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<Client> clientPerPages = db.Clients.Include(c => c.Discount).OrderBy(p => p.SecondName).Skip((page - 1) *
+            IEnumerable<Street> streetsPerPages = db.Streets.OrderBy(p => p.Name).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Clients.Count()
+                TotalItems = db.Streets.Count()
             };
-            MyIndexViewModel<Client> ivm = new MyIndexViewModel<Client>
+            MyIndexViewModel<Street> ivm = new MyIndexViewModel<Street>
             {
                 PageInfo = pageInfo,
-                Keeps = clientPerPages
+                Keeps = streetsPerPages
             };
             return View(ivm);
         }
 
-        // GET: Clients/Details/5
+        // GET: Streets/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Street street = db.Streets.Find(id);
+            if (street == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(street);
         }
 
-        // GET: Clients/Create
+        // GET: Streets/Create
         public ActionResult Create()
         {
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id");
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: Streets/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Create([Bind(Include = "Id,Name,DistrictID")] Street street)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                db.Streets.Add(street);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(street);
         }
 
-        // GET: Clients/Edit/5
+        // GET: Streets/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Street street = db.Streets.Find(id);
+            if (street == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(street);
         }
 
-        // POST: Clients/Edit/5
+        // POST: Streets/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Edit([Bind(Include = "Id,Name,DistrictID")] Street street)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                db.Entry(street).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            return View(street);
         }
 
-        // GET: Clients/Delete/5
+        // GET: Streets/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Street street = db.Streets.Find(id);
+            if (street == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(street);
         }
 
-        // POST: Clients/Delete/5
+        // POST: Streets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            Street street = db.Streets.Find(id);
+            db.Streets.Remove(street);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -10,125 +10,125 @@ using TestTaxi.Models;
 
 namespace TestTaxi.Controllers
 {
-    public class ClientsController : Controller
+    public class ValueTaximetersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Clients
+        // GET: ValueTaximeters
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<Client> clientPerPages = db.Clients.Include(c => c.Discount).OrderBy(p => p.SecondName).Skip((page - 1) *
+            IEnumerable<ValueTaximeter> vTPerPages = db.ValueTaximeters.Include(v => v.Order).OrderBy(p => p.Id).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Clients.Count()
+                TotalItems = db.ValueTaximeters.Count()
             };
-            MyIndexViewModel<Client> ivm = new MyIndexViewModel<Client>
+            MyIndexViewModel<ValueTaximeter> ivm = new MyIndexViewModel<ValueTaximeter>
             {
                 PageInfo = pageInfo,
-                Keeps = clientPerPages
+                Keeps = vTPerPages
             };
             return View(ivm);
         }
 
-        // GET: Clients/Details/5
+        // GET: ValueTaximeters/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            ValueTaximeter valueTaximeter = db.ValueTaximeters.Find(id);
+            if (valueTaximeter == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(valueTaximeter);
         }
 
-        // GET: Clients/Create
+        // GET: ValueTaximeters/Create
         public ActionResult Create()
         {
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id");
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID");
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: ValueTaximeters/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Create([Bind(Include = "Id,StartValue,EndValue")] ValueTaximeter valueTaximeter)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                db.ValueTaximeters.Add(valueTaximeter);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", valueTaximeter.Id);
+            return View(valueTaximeter);
         }
 
-        // GET: Clients/Edit/5
+        // GET: ValueTaximeters/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            ValueTaximeter valueTaximeter = db.ValueTaximeters.Find(id);
+            if (valueTaximeter == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", valueTaximeter.Id);
+            return View(valueTaximeter);
         }
 
-        // POST: Clients/Edit/5
+        // POST: ValueTaximeters/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Patronymic,PhoneNumber,DiscountID")] Client client)
+        public ActionResult Edit([Bind(Include = "Id,StartValue,EndValue")] ValueTaximeter valueTaximeter)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                db.Entry(valueTaximeter).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
-            return View(client);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", valueTaximeter.Id);
+            return View(valueTaximeter);
         }
 
-        // GET: Clients/Delete/5
+        // GET: ValueTaximeters/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            ValueTaximeter valueTaximeter = db.ValueTaximeters.Find(id);
+            if (valueTaximeter == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(valueTaximeter);
         }
 
-        // POST: Clients/Delete/5
+        // POST: ValueTaximeters/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            ValueTaximeter valueTaximeter = db.ValueTaximeters.Find(id);
+            db.ValueTaximeters.Remove(valueTaximeter);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

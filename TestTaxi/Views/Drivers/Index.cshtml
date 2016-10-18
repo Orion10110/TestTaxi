@@ -13,37 +13,39 @@
 <table class="table">
     <tr>
         <th>
-            Фамилия
+            @Html.DisplayNameFor(model => model.Car.Name)
         </th>
         <th>
-         Имя
+            @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            Отчество
-        </th>
-       
-        <th>
-            Телефон
+            @Html.DisplayNameFor(model => model.SecondName)
         </th>
         <th>
-            Дата рождения
+            @Html.DisplayNameFor(model => model.Patronymic)
         </th>
         <th>
-            Дата устройства
+            @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
         <th>
-            Категория
+            @Html.DisplayNameFor(model => model.DateOfBirth)
         </th>
         <th>
-           Автомобиль
+            @Html.DisplayNameFor(model => model.DateOfEmployment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistricrID)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model.Keeps) {
+@foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Patronymic)
+            @Html.DisplayFor(modelItem => item.Car.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
@@ -51,7 +53,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.SecondName)
         </td>
-       
+        <td>
+            @Html.DisplayFor(modelItem => item.Patronymic)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
@@ -65,7 +69,7 @@
             @Html.DisplayFor(modelItem => item.Category)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Car.Name)
+            @Html.DisplayFor(modelItem => item.DistricrID)
         </td>
         <td>
             @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |

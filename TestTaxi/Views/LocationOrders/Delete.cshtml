@@ -1,0 +1,96 @@
+﻿@model TestTaxi.Models.LocationOrder
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Вы действмтельно хотите удалить?</h3>
+<div>
+    <h4>LocationOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ApplicationUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.ApplicationUserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetFrom.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetFrom.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetTo.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetTo.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateComeFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateComeFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateComeIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateComeIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressTo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

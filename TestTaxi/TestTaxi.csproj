@@ -200,10 +200,15 @@
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\DiscountsController.cs" />
+    <Compile Include="Controllers\DistrictsController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationOrdersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\StreetsController.cs" />
     <Compile Include="Controllers\TypeCarsController.cs" />
+    <Compile Include="Controllers\ValueTaximetersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,6 +232,10 @@
     <Compile Include="Migrations\201610171850434_RelationLocAndOrder3.cs" />
     <Compile Include="Migrations\201610171850434_RelationLocAndOrder3.Designer.cs">
       <DependentUpon>201610171850434_RelationLocAndOrder3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610180914215_ChangeRelationDiscount.cs" />
+    <Compile Include="Migrations\201610180914215_ChangeRelationDiscount.Designer.cs">
+      <DependentUpon>201610180914215_ChangeRelationDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -337,11 +346,6 @@
     <Content Include="Views\Cars\Create.cshtml" />
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Delete.cshtml" />
-    <Content Include="Views\Drivers\Index.cshtml" />
-    <Content Include="Views\Drivers\Details.cshtml" />
-    <Content Include="Views\Drivers\Create.cshtml" />
-    <Content Include="Views\Drivers\Edit.cshtml" />
-    <Content Include="Views\Drivers\Delete.cshtml" />
     <Content Include="Views\Discounts\Index.cshtml" />
     <Content Include="Views\Discounts\Details.cshtml" />
     <Content Include="Views\Discounts\Create.cshtml" />
@@ -353,6 +357,35 @@
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Delete.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\ValueTaximeters\Index.cshtml" />
+    <Content Include="Views\ValueTaximeters\Details.cshtml" />
+    <Content Include="Views\ValueTaximeters\Create.cshtml" />
+    <Content Include="Views\ValueTaximeters\Edit.cshtml" />
+    <Content Include="Views\ValueTaximeters\Delete.cshtml" />
+    <Content Include="Views\LocationOrders\Index.cshtml" />
+    <Content Include="Views\LocationOrders\Details.cshtml" />
+    <Content Include="Views\LocationOrders\Create.cshtml" />
+    <Content Include="Views\LocationOrders\Edit.cshtml" />
+    <Content Include="Views\LocationOrders\Delete.cshtml" />
+    <Content Include="Views\Drivers\Index.cshtml" />
+    <Content Include="Views\Drivers\Details.cshtml" />
+    <Content Include="Views\Drivers\Create.cshtml" />
+    <Content Include="Views\Drivers\Edit.cshtml" />
+    <Content Include="Views\Drivers\Delete.cshtml" />
+    <Content Include="Views\Districts\Index.cshtml" />
+    <Content Include="Views\Districts\Details.cshtml" />
+    <Content Include="Views\Districts\Create.cshtml" />
+    <Content Include="Views\Districts\Edit.cshtml" />
+    <Content Include="Views\Districts\Delete.cshtml" />
+    <Content Include="Views\Streets\Index.cshtml" />
+    <Content Include="Views\Streets\Details.cshtml" />
+    <Content Include="Views\Streets\Create.cshtml" />
+    <Content Include="Views\Streets\Edit.cshtml" />
+    <Content Include="Views\Streets\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610151857244_InitialCreate.resx">
@@ -369,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610171850434_RelationLocAndOrder3.resx">
       <DependentUpon>201610171850434_RelationLocAndOrder3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610180914215_ChangeRelationDiscount.resx">
+      <DependentUpon>201610180914215_ChangeRelationDiscount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
