@@ -15,16 +15,16 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: TypeCars
-        public ActionResult Index(int page=1)
+        public ActionResult Index(int page=1, string filtr="")
         {
             int pageSize = 10;
-            IEnumerable<TypeCar> typesPerPages = db.TypeCars.OrderBy(p => p.Type).Skip((page - 1) *
+            IEnumerable<TypeCar> typesPerPages = db.TypeCars.Where(n => n.Type.Contains(filtr)).OrderBy(p => p.Type).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.TypeCars.Count()
+                TotalItems = db.TypeCars.Where(n => n.Type.Contains(filtr)).Count()
             };
             MyIndexViewModel<TypeCar> ivm = new MyIndexViewModel<TypeCar>
             {

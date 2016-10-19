@@ -12,6 +12,7 @@ namespace TestTaxi.Models
 
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
+
         [Display(Name = "Марка")]
         public string Name { get; set; }
 

@@ -2,18 +2,25 @@
 @using TestTaxi.Helpers
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Тип машины";
 }
 
-<h2>Index</h2>
+<h2>Тип машины</h2>
 
 <p>
     @Html.ActionLink("Добавить новую", "Create")
 </p>
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label">Тип: </label>
+        <input type="text" name="filtr" value="@ViewBag.Filtr" class="form-control text-box">
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Keeps)
+           Тип
         </th>
         <th></th>
     </tr>
@@ -33,5 +40,5 @@
 
 </table>
 <div class="btn-group">
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x, filtr = ViewBag.Filtr }))
 </div>

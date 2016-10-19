@@ -15,16 +15,41 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Cars
-        public ActionResult Index(int page=1)
+        public ActionResult Index(int page=1, int typeCar=0,int brandCar=0)
         {
+            List<Brand> listBrand = db.Brands.ToList();
+            listBrand.Insert(0, new Brand { Name = "Все", Id = 0 });
+            List<TypeCar> listType = db.TypeCars.ToList();
+            listType.Insert(0, new TypeCar { Type = "Все", Id = 0 });
+
+            SelectList brand = new SelectList(listBrand, "Id", "Name");
+            SelectList type = new SelectList(listType, "Id", "Type");
+
+            
+            ViewBag.TypeOfCar = type;
+            ViewBag.BrandOfCar = brand;
             int pageSize = 10;
-            IEnumerable<Car> carPerPages = db.Cars.Include(c => c.Brand).Include(c => c.TypeCar).OrderBy(p => p.Name).Skip((page - 1) *
-                pageSize).Take(pageSize);
+
+
+            IEnumerable<Car> carPerPages = db.Cars.Include(c => c.Brand).Include(c => c.TypeCar);
+            //IEnumerable<Car> carPerPages = db.Cars.Include(c => c.Brand).Include(c => c.TypeCar).OrderBy(p => p.Name).Skip((page - 1) *
+            //    pageSize).Take(pageSize);
+
+            if ( typeCar != 0)
+            {
+                carPerPages = carPerPages.Where(p => p.TypeCar.Id == typeCar);
+            }
+            if (brandCar!=0)
+            {
+                carPerPages = carPerPages.Where(p => p.Brand.Id == brandCar);
+            }
+            int pages = carPerPages.Count();
+            carPerPages =carPerPages.OrderBy(p => p.Name).Skip((page - 1) * pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Cars.Count()
+                TotalItems = pages
             };
             MyIndexViewModel<Car> ivm = new MyIndexViewModel<Car>
             {

@@ -1,18 +1,26 @@
 ﻿@model TestTaxi.Models.MyIndexViewModel<TestTaxi.Models.Brand>
 @using TestTaxi.Helpers
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Марки";
 }
 
-<h2>Index</h2>
+<h2>Марки</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Добавить новую", "Create")
 </p>
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label">Марка: </label>
+       <input type="text" name="filtr" value="@ViewBag.Filtr" class="form-control text-box">
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Keeps)
+            Марка
         </th>
         <th></th>
     </tr>
@@ -23,15 +31,14 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
 
 </table>
-<br />
 <div class="btn-group">
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x , filtr=ViewBag.Filtr}))
 </div>

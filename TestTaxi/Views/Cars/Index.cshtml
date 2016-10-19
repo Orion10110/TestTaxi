@@ -3,14 +3,28 @@
 
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Автомобили";
 }
 
-<h2>Index</h2>
+<h2>Автомобили</h2>
 
 <p>
     @Html.ActionLink("Добавить новую", "Create")
 </p>
+<form method="get">
+    <div class="form-inline">
+        @Html.Hidden("page", Model.PageInfo, htmlAttributes: new { @class = "form-control" })
+    <label class="control-label">Тип автомобиля: </label>
+    @Html.DropDownList("typeCar", ViewBag.TypeOfCar as SelectList,
+                    htmlAttributes: new { @class = "form-control" })
+
+    <label class="control-label">Марка автомобиля: </label>
+    @Html.DropDownList("brandCar", ViewBag.BrandOfCar as SelectList,
+                htmlAttributes: new { @class = "form-control" })
+
+    <input type="submit" value="Фильтр" class="btn btn-default" />
+</div>
+    </form>
 <table class="table">
     <tr>
         <th>
@@ -20,53 +34,54 @@
             Тип
         </th>
         <th>
-           Название
+            Название
         </th>
         <th>
-          Кол. мест
+            Кол. мест
         </th>
         <th>
-          ГОС номер
+            ГОС номер
         </th>
         <th>
-         Комфортность
+            Комфортность
         </th>
         <th>
-          Рабочая
+            Рабочая
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model.Keeps) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TypeCar.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Place)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GosNumbet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Stars)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Active)
-        </td>
-        <td>
-            @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model.Keeps)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeCar.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GosNumbet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stars)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
 <div class="btn-group">
