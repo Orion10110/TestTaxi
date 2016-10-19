@@ -237,6 +237,26 @@
     <Compile Include="Migrations\201610180914215_ChangeRelationDiscount.Designer.cs">
       <DependentUpon>201610180914215_ChangeRelationDiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610190903055_RelDisc.cs" />
+    <Compile Include="Migrations\201610190903055_RelDisc.Designer.cs">
+      <DependentUpon>201610190903055_RelDisc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610190909003_jk.cs" />
+    <Compile Include="Migrations\201610190909003_jk.Designer.cs">
+      <DependentUpon>201610190909003_jk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610190914259_jk2.cs" />
+    <Compile Include="Migrations\201610190914259_jk2.Designer.cs">
+      <DependentUpon>201610190914259_jk2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610190922365_Ul.cs" />
+    <Compile Include="Migrations\201610190922365_Ul.Designer.cs">
+      <DependentUpon>201610190922365_Ul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610190926509_my1.cs" />
+    <Compile Include="Migrations\201610190926509_my1.Designer.cs">
+      <DependentUpon>201610190926509_my1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -341,7 +361,6 @@
     <Content Include="Views\Cars\Create.cshtml" />
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Delete.cshtml" />
-    <Content Include="Views\Discounts\Index.cshtml" />
     <Content Include="Views\Discounts\Details.cshtml" />
     <Content Include="Views\Discounts\Create.cshtml" />
     <Content Include="Views\Discounts\Edit.cshtml" />
@@ -386,6 +405,7 @@
     <Content Include="Views\Brands\Create.cshtml" />
     <Content Include="Views\Brands\Edit.cshtml" />
     <Content Include="Views\Brands\Delete.cshtml" />
+    <Content Include="Views\Discounts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610151857244_InitialCreate.resx">
@@ -405,6 +425,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610180914215_ChangeRelationDiscount.resx">
       <DependentUpon>201610180914215_ChangeRelationDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610190903055_RelDisc.resx">
+      <DependentUpon>201610190903055_RelDisc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610190909003_jk.resx">
+      <DependentUpon>201610190909003_jk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610190914259_jk2.resx">
+      <DependentUpon>201610190914259_jk2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610190922365_Ul.resx">
+      <DependentUpon>201610190922365_Ul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610190926509_my1.resx">
+      <DependentUpon>201610190926509_my1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

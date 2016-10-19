@@ -15,11 +15,24 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Discounts
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, string filtr = "")
         {
+            ViewBag.Filtr = filtr;
             int pageSize = 10;
-            IEnumerable<Discount> discountPerPages = db.Discounts.OrderBy(p => p.Name).Skip((page - 1) *
+            IEnumerable<Discount> discountPerPages;
+            if (filtr =="" || filtr == null)
+            {
+                discountPerPages = db.Discounts.OrderBy(p => p.Name).Skip((page - 1) *
                 pageSize).Take(pageSize);
+            }
+            else
+            {
+                int disount = int.Parse(filtr);
+                discountPerPages = db.Discounts.Where(n => n.Percent == disount).OrderBy(p => p.Name).Skip((page - 1) *
+                pageSize).Take(pageSize);
+            }
+           
+         
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,

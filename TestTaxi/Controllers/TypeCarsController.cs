@@ -17,6 +17,7 @@ namespace TestTaxi.Controllers
         // GET: TypeCars
         public ActionResult Index(int page=1, string filtr="")
         {
+            ViewBag.Filtr = filtr;
             int pageSize = 10;
             IEnumerable<TypeCar> typesPerPages = db.TypeCars.Where(n => n.Type.Contains(filtr)).OrderBy(p => p.Type).Skip((page - 1) *
                 pageSize).Take(pageSize);

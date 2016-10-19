@@ -18,7 +18,8 @@ namespace TestTaxi.Controllers
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<Client> clientPerPages = db.Clients.Include(c => c.Discount).OrderBy(p => p.SecondName).Skip((page - 1) *
+            //.Include(c => c.Discount)
+            IEnumerable<Client> clientPerPages = db.Clients.OrderBy(p => p.SecondName).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
