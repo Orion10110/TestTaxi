@@ -1,21 +1,21 @@
 ﻿@model TestTaxi.Models.ValueTaximeter
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Подробнее";
 }
 
-<h2>Details</h2>
+<h2>Подробнее</h2>
 
 <div>
-    <h4>ValueTaximeter</h4>
+    <h4>Значения таксометра</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Order.ApplicationUserID)
+            @Html.DisplayNameFor(model => model.Order.Id)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Order.ApplicationUserID)
+            @Html.DisplayFor(model => model.Order.Id)
         </dd>
 
         <dt>

@@ -1,21 +1,21 @@
 ﻿@model TestTaxi.Models.LocationOrder
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Подробнее";
 }
 
-<h2>Details</h2>
+<h2>Подробнее</h2>
 
 <div>
-    <h4>LocationOrder</h4>
+    <h4>Информация о заказе</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Order.ApplicationUserID)
+            @Html.DisplayNameFor(model => model.Order.Id)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Order.ApplicationUserID)
+            @Html.DisplayFor(model => model.Order.Id)
         </dd>
 
         <dt>

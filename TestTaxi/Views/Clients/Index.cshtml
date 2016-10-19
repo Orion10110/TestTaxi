@@ -1,57 +1,62 @@
-﻿@model TestTaxi.Models.MyIndexViewModel<TestTaxi.Models.Order>
+﻿@model TestTaxi.Models.MyIndexViewModel<TestTaxi.Models.Client>
 @using TestTaxi.Helpers
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Клиенты";
 }
 
-<h2>Index</h2>
+<h2>Клиенты</h2>
 
 <p>
-    @Html.ActionLink("Добавить новую", "Create")
+    @Html.ActionLink("Добавить", "Create")
 </p>
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label">Фамилия: </label>
+        <input type="text" name="secondName" value="@ViewBag.SecondName" class="form-control text-box">
+        <label class="control-label">Телефон: </label>
+        <input type="text" name="phone" value="@ViewBag.Phone" class="form-control text-box">
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Client.FirstName)
+          Фамилия
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Driver.FirstName)
+           Имя
+        </th>
+      
+        <th>
+           Отчество
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LocationOrder.PhoneNumber)
+          Телефон
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ValueTaximeter.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApplicationUserID)
+           Скидка
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Keeps) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Client.FirstName)
+            @Html.DisplayFor(modelItem => item.SecondName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Driver.FirstName)
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Patronymic)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LocationOrder.PhoneNumber)
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ValueTaximeter.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApplicationUserID)
+            @Html.DisplayFor(modelItem => item.Discount.Name)
         </td>
         <td>
             @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
@@ -63,5 +68,5 @@
 
 </table>
 <div class="btn-group">
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x ,secondName= @ViewBag.SecondName, phone=@ViewBag.Phone}))
 </div>

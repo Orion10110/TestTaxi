@@ -7,7 +7,7 @@ namespace TestTaxi.Models
     public class District
     {
         [HiddenInput(DisplayValue = false)]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [Display(Name = "Название")]
         public string Name { get; set; }
         public District()

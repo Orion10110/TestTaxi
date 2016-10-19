@@ -15,16 +15,18 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Drivers
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1,string secondName = "", string phone = "")
         {
+           ViewBag.SecondName = secondName;
+            ViewBag.Phone = phone;
             int pageSize = 10;
-            IEnumerable<Driver> typesPerPages = db.Drivers.Include(d => d.Car).Include(d=>d.District).OrderBy(p => p.FirstName).Skip((page - 1) *
-                pageSize).Take(pageSize);
+            IEnumerable<Driver> typesPerPages = db.Drivers.Include(d => d.Car).Include(d => d.District).Where(s => (s.SecondName.Contains(secondName) && s.PhoneNumber.Contains(phone)))
+                .OrderBy(p => p.FirstName).Skip((page - 1) * pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Drivers.Count()
+                TotalItems = db.Drivers.Where(s => (s.SecondName.Contains(secondName) && s.PhoneNumber.Contains(phone))).Count()
             };
             MyIndexViewModel<Driver> ivm = new MyIndexViewModel<Driver>
             {
@@ -32,7 +34,7 @@ namespace TestTaxi.Controllers
                 Keeps = typesPerPages
             };
             return View(ivm);
-          
+
         }
 
         // GET: Drivers/Details/5
@@ -54,6 +56,7 @@ namespace TestTaxi.Controllers
         public ActionResult Create()
         {
             ViewBag.CarID = new SelectList(db.Cars, "Id", "Name");
+            ViewBag.DistricrID = new SelectList(db.Districts, "Id", "Name");
             return View();
         }
 
@@ -88,6 +91,7 @@ namespace TestTaxi.Controllers
                 return HttpNotFound();
             }
             ViewBag.CarID = new SelectList(db.Cars, "Id", "Name", driver.CarID);
+            ViewBag.DistricrID = new SelectList(db.Districts, "Id", "Name",driver.DistricrID);
             return View(driver);
         }
 

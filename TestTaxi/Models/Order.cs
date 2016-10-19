@@ -18,7 +18,6 @@ namespace TestTaxi.Models
         public virtual ValueTaximeter ValueTaximeter { get; set; }
         [Display(Name = "Данные поездки")]
         public virtual LocationOrder LocationOrder { get; set; }
-
         [HiddenInput(DisplayValue = false)]
         public int? ClientID { get; set; }
         [HiddenInput(DisplayValue = false)]
@@ -27,7 +26,6 @@ namespace TestTaxi.Models
         public virtual Client Client { get; set; }
         [Display(Name = "Водитель")]
         public virtual Driver Driver { get; set; }
-
         [HiddenInput(DisplayValue = false)]
         public string ApplicationUserID { get; set; }
     }

@@ -44,7 +44,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
     PushIndent("    ");
 }
 #>
-<h3>Вы действмтельно хотите удалить?</h3>
+<h3>Вы действительно хотите удалить?</h3>
 <div>
     <h4><#= ViewDataTypeShortName #></h4>
     <hr />

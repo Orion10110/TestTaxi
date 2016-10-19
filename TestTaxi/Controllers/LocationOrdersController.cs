@@ -18,8 +18,8 @@ namespace TestTaxi.Controllers
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
-            IEnumerable<LocationOrder> lOPerPages = db.LocationOrders.Include(l => l.Order).Include(l => l.StreetFrom).Include(l => l.StreetTo).
-                OrderBy(p => p.DateOrder).Skip((page - 1) *
+            IEnumerable<LocationOrder> lOPerPages = db.LocationOrders.Include(l => l.Order).Include(l => l.StreetFrom).Include(l => l.StreetTo)
+                .OrderBy(p => p.DateOrder).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
@@ -34,6 +34,7 @@ namespace TestTaxi.Controllers
             };
 
             return View(ivm);
+        
         }
 
         // GET: LocationOrders/Details/5
@@ -54,7 +55,7 @@ namespace TestTaxi.Controllers
         // GET: LocationOrders/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID");
+            ViewBag.Id = new SelectList(db.Orders, "Id", "Id");
             ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name");
             ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name");
             return View();
@@ -111,7 +112,7 @@ namespace TestTaxi.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", locationOrder.Id);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "Id", locationOrder.Id);
             ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetFromID);
             ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name", locationOrder.StreetToID);
             return View(locationOrder);

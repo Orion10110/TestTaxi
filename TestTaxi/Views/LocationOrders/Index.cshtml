@@ -2,47 +2,47 @@
 @using TestTaxi.Helpers
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Информация заказа";
 }
 
-<h2>Index</h2>
+<h2>Информация заказа</h2>
 
 <p>
-    @Html.ActionLink("Добавить новую", "Create")
+    @Html.ActionLink("Добавить новый", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Order.ApplicationUserID)
+            Id
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StreetFrom.Name)
+            Ул. откуда
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StreetTo.Name)
+           Ул. Куда
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            Телефон
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateOrder)
+            Дата заказа
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateComeFrom)
+           Дата прибытия транспорта
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateComeIn)
+           Дата прибытия
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AddressFrom)
+            Адрес откуда
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AddressTo)
+            Адрес куда
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Keeps) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Order.ApplicationUserID)

@@ -6,24 +6,25 @@
 
 <h2>Details</h2>
 
+<h3>Вы действительно хотите удалить?</h3>
 <div>
     <h4>Order</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Client.FirstName)
+         Клиент   @Html.DisplayNameFor(model => model.Client.SecondName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Client.FirstName)
+            @Html.DisplayFor(model => model.Client.SecondName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Driver.FirstName)
+         Водитель   @Html.DisplayNameFor(model => model.Driver.SecondName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Driver.FirstName)
+            @Html.DisplayFor(model => model.Driver.SecondName)
         </dd>
 
         <dt>
@@ -50,17 +51,15 @@
             @Html.DisplayFor(model => model.status)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplicationUserID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplicationUserID)
-        </dd>
 
     </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
 </div>
-<p>
-    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Назад", "Index")
-</p>

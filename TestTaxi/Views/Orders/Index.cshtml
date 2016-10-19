@@ -1,47 +1,45 @@
-﻿@model IEnumerable<TestTaxi.Models.Order>
+﻿@model TestTaxi.Models.MyIndexViewModel<TestTaxi.Models.Order>
+@using TestTaxi.Helpers
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Заказы";
 }
 
-<h2>Index</h2>
+<h2>Заказы</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Добавить новый", "Create")
 </p>
 <table class="table">
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.Client.FirstName)
+           Водитель
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Driver.FirstName)
+            Id информации
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LocationOrder.PhoneNumber)
+            Id таксометра
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ValueTaximeter.Id)
+            Статус
         </th>
+        
         <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApplicationUserID)
+            Клиент
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Keeps) {
     <tr>
+        
         <td>
-            @Html.DisplayFor(modelItem => item.Client.FirstName)
+            @Html.DisplayFor(modelItem => item.Driver.SecondName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Driver.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationOrder.PhoneNumber)
+            @Html.DisplayFor(modelItem => item.LocationOrder.Id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ValueTaximeter.Id)
@@ -50,14 +48,18 @@
             @Html.DisplayFor(modelItem => item.status)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ApplicationUserID)
+            @Html.DisplayFor(modelItem => item.Client.SecondName)
         </td>
+       
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
 
 </table>
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+</div>

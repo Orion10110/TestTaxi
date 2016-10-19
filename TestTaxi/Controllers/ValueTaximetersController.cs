@@ -52,7 +52,7 @@ namespace TestTaxi.Controllers
         // GET: ValueTaximeters/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID");
+            ViewBag.Id = new SelectList(db.Orders, "Id", "Id");
             return View();
         }
 
@@ -70,7 +70,7 @@ namespace TestTaxi.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", valueTaximeter.Id);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "Id", valueTaximeter.Id);
             return View(valueTaximeter);
         }
 
@@ -86,7 +86,7 @@ namespace TestTaxi.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", valueTaximeter.Id);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "Id", valueTaximeter.Id);
             return View(valueTaximeter);
         }
 
@@ -103,7 +103,7 @@ namespace TestTaxi.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id = new SelectList(db.Orders, "Id", "ApplicationUserID", valueTaximeter.Id);
+            ViewBag.Id = new SelectList(db.Orders, "Id", "Id", valueTaximeter.Id);
             return View(valueTaximeter);
         }
 

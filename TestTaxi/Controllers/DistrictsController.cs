@@ -15,16 +15,17 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Districts
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, string nameFiltr = "")
         {
+            ViewBag.NameFiltr = nameFiltr;
             int pageSize = 10;
-            IEnumerable<District> districtPerPages = db.Districts.OrderBy(p => p.Name).Skip((page - 1) *
+            IEnumerable<District> districtPerPages = db.Districts.Where(n => n.Name.Contains(nameFiltr)).OrderBy(p => p.Name).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Districts.Count()
+                TotalItems = db.Districts.Where(n => n.Name.Contains(nameFiltr)).Count()
             };
             MyIndexViewModel<District> ivm = new MyIndexViewModel<District>
             {
@@ -32,10 +33,11 @@ namespace TestTaxi.Controllers
                 Keeps = districtPerPages
             };
             return View(ivm);
+
         }
 
         // GET: Districts/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -73,7 +75,7 @@ namespace TestTaxi.Controllers
         }
 
         // GET: Districts/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -104,7 +106,7 @@ namespace TestTaxi.Controllers
         }
 
         // GET: Districts/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -121,7 +123,7 @@ namespace TestTaxi.Controllers
         // POST: Districts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             District district = db.Districts.Find(id);
             db.Districts.Remove(district);

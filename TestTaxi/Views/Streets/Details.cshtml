@@ -1,29 +1,29 @@
 ﻿@model TestTaxi.Models.Street
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "О улице";
 }
 
-<h2>Details</h2>
+<h2>Подробнее</h2>
 
 <div>
-    <h4>Street</h4>
+    <h4>Улица</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.District.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District.Name)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DistrictID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DistrictID)
         </dd>
 
     </dl>

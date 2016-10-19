@@ -1,22 +1,22 @@
 ﻿@model TestTaxi.Models.LocationOrder
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Удаление данных о заказе";
 }
 
-<h2>Delete</h2>
+<h2>Удаление</h2>
 
-<h3>Вы действмтельно хотите удалить?</h3>
+<h3>Вы действительно хотите удалить?</h3>
 <div>
-    <h4>LocationOrder</h4>
+    <h4>Данные заказа</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Order.ApplicationUserID)
+            @Html.DisplayNameFor(model => model.Order.Id)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Order.ApplicationUserID)
+            @Html.DisplayFor(model => model.Order.Id)
         </dd>
 
         <dt>

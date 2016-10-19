@@ -1,22 +1,16 @@
 ﻿@model TestTaxi.Models.Client
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Подробнее";
 }
 
-<h2>Details</h2>
+<h2>Подробнее</h2>
 
 <div>
-    <h4>Client</h4>
+    <h4>Клиент</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Discount.Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Discount.Id)
-        </dd>
+     
 
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -50,6 +44,13 @@
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount.Name) скидки
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount.Name)
+        </dd>
     </dl>
 </div>
 <p>

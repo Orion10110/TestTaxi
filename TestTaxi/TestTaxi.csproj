@@ -257,6 +257,14 @@
     <Compile Include="Migrations\201610190926509_my1.Designer.cs">
       <DependentUpon>201610190926509_my1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610191516289_New.cs" />
+    <Compile Include="Migrations\201610191516289_New.Designer.cs">
+      <DependentUpon>201610191516289_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610191517461_New1.cs" />
+    <Compile Include="Migrations\201610191517461_New1.Designer.cs">
+      <DependentUpon>201610191517461_New1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -269,7 +277,6 @@
     <Compile Include="Models\LocationOrder.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrdersController.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Street.cs" />
@@ -365,7 +372,6 @@
     <Content Include="Views\Discounts\Create.cshtml" />
     <Content Include="Views\Discounts\Edit.cshtml" />
     <Content Include="Views\Discounts\Delete.cshtml" />
-    <Content Include="Views\Clients\Index.cshtml" />
     <Content Include="Views\Clients\Details.cshtml" />
     <Content Include="Views\Clients\Create.cshtml" />
     <Content Include="Views\Clients\Edit.cshtml" />
@@ -375,37 +381,37 @@
     <Content Include="Views\Orders\Create.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Delete.cshtml" />
-    <Content Include="Views\ValueTaximeters\Index.cshtml" />
-    <Content Include="Views\ValueTaximeters\Details.cshtml" />
-    <Content Include="Views\ValueTaximeters\Create.cshtml" />
-    <Content Include="Views\ValueTaximeters\Edit.cshtml" />
-    <Content Include="Views\ValueTaximeters\Delete.cshtml" />
     <Content Include="Views\LocationOrders\Index.cshtml" />
     <Content Include="Views\LocationOrders\Details.cshtml" />
     <Content Include="Views\LocationOrders\Create.cshtml" />
     <Content Include="Views\LocationOrders\Edit.cshtml" />
     <Content Include="Views\LocationOrders\Delete.cshtml" />
-    <Content Include="Views\Drivers\Index.cshtml" />
-    <Content Include="Views\Drivers\Details.cshtml" />
-    <Content Include="Views\Drivers\Create.cshtml" />
-    <Content Include="Views\Drivers\Edit.cshtml" />
-    <Content Include="Views\Drivers\Delete.cshtml" />
     <Content Include="Views\Districts\Index.cshtml" />
     <Content Include="Views\Districts\Details.cshtml" />
-    <Content Include="Views\Districts\Create.cshtml" />
     <Content Include="Views\Districts\Edit.cshtml" />
     <Content Include="Views\Districts\Delete.cshtml" />
-    <Content Include="Views\Streets\Index.cshtml" />
-    <Content Include="Views\Streets\Details.cshtml" />
-    <Content Include="Views\Streets\Create.cshtml" />
-    <Content Include="Views\Streets\Edit.cshtml" />
-    <Content Include="Views\Streets\Delete.cshtml" />
     <Content Include="Views\Brands\Index.cshtml" />
     <Content Include="Views\Brands\Details.cshtml" />
     <Content Include="Views\Brands\Create.cshtml" />
     <Content Include="Views\Brands\Edit.cshtml" />
     <Content Include="Views\Brands\Delete.cshtml" />
     <Content Include="Views\Discounts\Index.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Districts\Create.cshtml" />
+    <Content Include="Views\Streets\Index.cshtml" />
+    <Content Include="Views\Streets\Details.cshtml" />
+    <Content Include="Views\Streets\Create.cshtml" />
+    <Content Include="Views\Streets\Edit.cshtml" />
+    <Content Include="Views\Streets\Delete.cshtml" />
+    <Content Include="Views\Drivers\Index.cshtml" />
+    <Content Include="Views\Drivers\Details.cshtml" />
+    <Content Include="Views\Drivers\Create.cshtml" />
+    <Content Include="Views\Drivers\Edit.cshtml" />
+    <Content Include="Views\Drivers\Delete.cshtml" />
+    <Content Include="Views\ValueTaximeters\Index.cshtml" />
+    <Content Include="Views\ValueTaximeters\Details.cshtml" />
+    <Content Include="Views\ValueTaximeters\Edit.cshtml" />
+    <Content Include="Views\ValueTaximeters\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610151857244_InitialCreate.resx">
@@ -440,6 +446,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610190926509_my1.resx">
       <DependentUpon>201610190926509_my1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610191516289_New.resx">
+      <DependentUpon>201610191516289_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610191517461_New1.resx">
+      <DependentUpon>201610191517461_New1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

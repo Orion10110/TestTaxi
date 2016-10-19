@@ -2,23 +2,30 @@
 @using TestTaxi.Helpers
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Районы";
 }
 
-<h2>Index</h2>
+<h2>Районы</h2>
 
 <p>
-    @Html.ActionLink("Добавить новую", "Create")
+    @Html.ActionLink("Добавить новый", "Create")
 </p>
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label">Фамилия: </label>
+        <input type="text" name="secondName" value="@ViewBag.NameFiltr" class="form-control text-box">
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Название
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Keeps) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
@@ -33,5 +40,5 @@
 
 </table>
 <div class="btn-group">
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x ,nameFilter= @ViewBag.NameFiltr }))
 </div>

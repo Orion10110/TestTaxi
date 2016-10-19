@@ -1,17 +1,18 @@
 ﻿@model TestTaxi.Models.Driver
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Изменить";
 }
 
-<h2>Edit</h2>
+<h2>Изменить</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Driver</h4>
+        <h4>Водитель</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -73,17 +74,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CarID, "CarID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CarID, "Автомобиль", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("CarID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CarID, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.DistricrID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CarID, "Район", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DistricrID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("DistricrID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DistricrID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -99,3 +99,7 @@
 <div>
     @Html.ActionLink("Назад", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

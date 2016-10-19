@@ -15,17 +15,18 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Clients
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, string secondName = "", string phone = "")
         {
+            ViewBag.SecondName = secondName;
+            ViewBag.Phone = phone;
             int pageSize = 10;
-            //.Include(c => c.Discount)
-            IEnumerable<Client> clientPerPages = db.Clients.OrderBy(p => p.SecondName).Skip((page - 1) *
+            IEnumerable<Client> clientPerPages = db.Clients.Include(c => c.Discount).Where(s =>(s.SecondName.Contains(secondName) && s.PhoneNumber.Contains(phone))).OrderBy(p => p.SecondName).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Clients.Count()
+                TotalItems = db.Clients.Where(s => s.SecondName.Contains(secondName) && s.PhoneNumber.Contains(phone)).Count()
             };
             MyIndexViewModel<Client> ivm = new MyIndexViewModel<Client>
             {
@@ -53,7 +54,7 @@ namespace TestTaxi.Controllers
         // GET: Clients/Create
         public ActionResult Create()
         {
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id");
+            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Name");
             return View();
         }
 
@@ -71,7 +72,7 @@ namespace TestTaxi.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
+            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Name", client.DiscountID);
             return View(client);
         }
 
@@ -87,7 +88,7 @@ namespace TestTaxi.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Id", client.DiscountID);
+            ViewBag.DiscountID = new SelectList(db.Discounts, "Id", "Name", client.DiscountID);
             return View(client);
         }
 

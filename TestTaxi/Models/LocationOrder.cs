@@ -11,7 +11,6 @@ namespace TestTaxi.Models
         [ForeignKey("Order")]
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
-
         [Display(Name = "Телефон")]
         public string PhoneNumber { get; set; }
         [Display(Name = "Дата заказа")]
@@ -24,7 +23,6 @@ namespace TestTaxi.Models
         public string AddressFrom { get; set; }
         [Display(Name = "Место назначения")]
         public string AddressTo { get; set; }
-
         [HiddenInput(DisplayValue = false)]
         public int? StreetFromID { get; set; }
         [HiddenInput(DisplayValue = false)]
@@ -33,7 +31,7 @@ namespace TestTaxi.Models
         public virtual Street StreetFrom { get; set; }
         [Display(Name = "Улица куда")]
         public virtual Street StreetTo { get; set; }
-        [Display(Name = "ЗаказЫ")]
+        [Display(Name = "Заказы")]
         public virtual Order Order { get; set; }
     }
 }

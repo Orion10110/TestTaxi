@@ -33,7 +33,6 @@ namespace TestTaxi.Controllers
                 Keeps = orderPerPages
             };
             return View(ivm);
-            
         }
 
         // GET: Orders/Details/5
@@ -54,8 +53,8 @@ namespace TestTaxi.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName");
-            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName");
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "SecondName");
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "SecondName");
             ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber");
             ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id");
             return View();
@@ -75,8 +74,8 @@ namespace TestTaxi.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName", order.ClientID);
-            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName", order.DriverID);
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "SecondName", order.ClientID);
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "SecondName", order.DriverID);
             ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber", order.Id);
             ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
             return View(order);
@@ -94,9 +93,9 @@ namespace TestTaxi.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName", order.ClientID);
-            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName", order.DriverID);
-            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber", order.Id);
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "SecondName", order.ClientID);
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "SecondName", order.DriverID);
+            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "Id", order.Id);
             ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
             return View(order);
         }

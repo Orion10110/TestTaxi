@@ -2,22 +2,35 @@
 @using TestTaxi.Helpers
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Улицы";
 }
 
-<h2>Index</h2>
+<h2>Улицы</h2>
 
 <p>
     @Html.ActionLink("Добавить новую", "Create")
 </p>
+<form method="get">
+    <div class="form-inline">
+        @Html.Hidden("page", Model.PageInfo, htmlAttributes: new { @class = "form-control" })
+        <label class="control-label">Тип автомобиля: </label>
+        @Html.DropDownList("districtF", ViewBag.District as SelectList,
+                    htmlAttributes: new { @class = "form-control" })
+
+      
+
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
 <table class="table">
     <tr>
         <th>
-           Имя
+            Название
         </th>
         <th>
-           
+            Район
         </th>
+        
         <th></th>
     </tr>
 
@@ -27,8 +40,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DistrictID)
+            @Html.DisplayFor(modelItem => item.District.Name)
         </td>
+        
         <td>
             @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Детали", "Details", new { id=item.Id }) |

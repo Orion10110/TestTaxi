@@ -15,21 +15,38 @@ namespace TestTaxi.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Streets
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, int districtF = 0)
         {
+            List<District> listDistrict = db.Districts.ToList();
+            listDistrict.Insert(0, new District { Name = "Все", Id = 0 });
+            
+
+            SelectList district = new SelectList(listDistrict, "Id", "Name");
+         
+
+            ViewBag.District = district;
             int pageSize = 10;
-            IEnumerable<Street> streetsPerPages = db.Streets.OrderBy(p => p.Name).Skip((page - 1) *
-                pageSize).Take(pageSize);
+
+
+            IEnumerable<Street> streetPerPages = db.Streets.Include(c => c.District);
+           
+            if (districtF != 0)
+            {
+                streetPerPages = streetPerPages.Where(p => p.District.Id == districtF);
+            }
+          
+            int pages = streetPerPages.Count();
+            streetPerPages = streetPerPages.OrderBy(p => p.Name).Skip((page - 1) * pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
                 PageNumber = page,
                 PageSize = pageSize,
-                TotalItems = db.Streets.Count()
+                TotalItems = pages
             };
             MyIndexViewModel<Street> ivm = new MyIndexViewModel<Street>
             {
                 PageInfo = pageInfo,
-                Keeps = streetsPerPages
+                Keeps = streetPerPages
             };
             return View(ivm);
         }
@@ -52,6 +69,7 @@ namespace TestTaxi.Controllers
         // GET: Streets/Create
         public ActionResult Create()
         {
+            ViewBag.DistrictID = new SelectList(db.Districts, "Id", "Name");
             return View();
         }
 
@@ -69,6 +87,7 @@ namespace TestTaxi.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.DistrictID = new SelectList(db.Districts, "Id", "Name", street.DistrictID);
             return View(street);
         }
 
@@ -84,6 +103,7 @@ namespace TestTaxi.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.DistrictID = new SelectList(db.Districts, "Id", "Name", street.DistrictID);
             return View(street);
         }
 
@@ -100,6 +120,7 @@ namespace TestTaxi.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.DistrictID = new SelectList(db.Districts, "Id", "Name", street.DistrictID);
             return View(street);
         }
 
