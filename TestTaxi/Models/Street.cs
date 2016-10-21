@@ -8,7 +8,7 @@ namespace TestTaxi.Models
     {
         public Street()
         {
-            this.LocationOrders = new HashSet<LocationOrder>();
+            this.Orders = new HashSet<Order>();
         }
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
@@ -19,6 +19,6 @@ namespace TestTaxi.Models
         [Display(Name = "Название")]
         public virtual District  District { get; set;}
         [HiddenInput(DisplayValue = false)]
-        public virtual ICollection<LocationOrder> LocationOrders { get; set; } 
+        public virtual ICollection<Order> Orders { get; set; } 
     }
 }

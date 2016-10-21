@@ -33,11 +33,8 @@ namespace TestTaxi.Models
         public DbSet<Client> Clients { get; set; }
         public DbSet<Discount> Discounts{ get; set; }
         public DbSet<District> Districts { get; set; }
-        public DbSet<LocationOrder> LocationOrders{ get; set; }
         public DbSet<Order> Orders{ get; set; }
         public DbSet<Street> Streets { get; set; }
-        public DbSet<ValueTaximeter> ValueTaximeters{ get; set; }
-
 
         public static ApplicationDbContext Create()
         {

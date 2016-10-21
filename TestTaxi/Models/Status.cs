@@ -4,6 +4,7 @@ namespace TestTaxi.Models
 {
     public enum Status
     {
+        ВСЕ,
         ПРИНЯТ,
         ОБРАБАТЫВАЕТСЯ,
         ЗАВЕРШЕН

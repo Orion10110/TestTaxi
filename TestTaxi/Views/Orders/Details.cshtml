@@ -1,18 +1,18 @@
 ﻿@model TestTaxi.Models.Order
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Детали";
 }
 
-<h2>Details</h2>
+<h2>Детали</h2>
 
 <h3>Вы действительно хотите удалить?</h3>
 <div>
-    <h4>Order</h4>
+    <h4>Заказ</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-         Клиент   @Html.DisplayNameFor(model => model.Client.SecondName)
+            @Html.DisplayNameFor(model => model.Client.SecondName)
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-         Водитель   @Html.DisplayNameFor(model => model.Driver.SecondName)
+            @Html.DisplayNameFor(model => model.Driver.SecondName)
         </dt>
 
         <dd>
@@ -28,19 +28,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LocationOrder.PhoneNumber)
+            @Html.DisplayNameFor(model => model.StreetFrom.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LocationOrder.PhoneNumber)
+            @Html.DisplayFor(model => model.StreetFrom.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ValueTaximeter.Id)
+            @Html.DisplayNameFor(model => model.StreetTo.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ValueTaximeter.Id)
+            @Html.DisplayFor(model => model.StreetTo.Name)
         </dd>
 
         <dt>
@@ -49,6 +49,38 @@
 
         <dd>
             @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndValue)
         </dd>
 
 

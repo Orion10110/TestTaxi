@@ -10,6 +10,7 @@ using TestTaxi.Models;
 
 namespace TestTaxi.Controllers
 {
+    [Authorize]
     public class BrandsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

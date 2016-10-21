@@ -203,12 +203,10 @@
     <Compile Include="Controllers\DistrictsController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LocationOrdersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\StreetsController.cs" />
     <Compile Include="Controllers\TypeCarsController.cs" />
-    <Compile Include="Controllers\ValueTaximetersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,6 +262,14 @@
     <Compile Include="Migrations\201610191517461_New1.cs" />
     <Compile Include="Migrations\201610191517461_New1.Designer.cs">
       <DependentUpon>201610191517461_New1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610210549505_ChangeOrder.cs" />
+    <Compile Include="Migrations\201610210549505_ChangeOrder.Designer.cs">
+      <DependentUpon>201610210549505_ChangeOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610210752595_DelEntyre.cs" />
+    <Compile Include="Migrations\201610210752595_DelEntyre.Designer.cs">
+      <DependentUpon>201610210752595_DelEntyre.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -453,6 +459,12 @@
     <EmbeddedResource Include="Migrations\201610191517461_New1.resx">
       <DependentUpon>201610191517461_New1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610210549505_ChangeOrder.resx">
+      <DependentUpon>201610210549505_ChangeOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610210752595_DelEntyre.resx">
+      <DependentUpon>201610210752595_DelEntyre.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -462,7 +474,9 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_LocalResources\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

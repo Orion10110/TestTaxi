@@ -7,19 +7,24 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TestTaxi.Models;
+using Microsoft.AspNet.Identity;
 
 namespace TestTaxi.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Orders
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1,int status = 0)
         {
+            //List<Status> listBrand = new List<Status>() { Status.ВСЕ, Status.ЗАВЕРШЕН, Status.ОБРАБАТЫВАЕТСЯ, Status.ПРИНЯТ };
+            //SelectList status = new SelectList(listBrand, "Status", "Status");
             int pageSize = 10;
-            IEnumerable<Order> orderPerPages = db.Orders.Include(o => o.Client).Include(o => o.Driver).Include(o => o.LocationOrder).Include(o => o.ValueTaximeter).
-                OrderBy(p => p.status).Skip((page - 1) *
+            string id = User.Identity.GetUserId();
+            IEnumerable<Order> orderPerPages = db.Orders.Where(s=>s.ApplicationUserID == id).Include(o => o.Client).Include(o => o.Driver).Include(o => o.StreetFrom).Include(o => o.StreetTo)
+                .OrderBy(p => p.DateOrder).Skip((page - 1) *
                 pageSize).Take(pageSize);
             PageInfo pageInfo = new PageInfo
             {
@@ -32,7 +37,9 @@ namespace TestTaxi.Controllers
                 PageInfo = pageInfo,
                 Keeps = orderPerPages
             };
+
             return View(ivm);
+         
         }
 
         // GET: Orders/Details/5
@@ -53,10 +60,10 @@ namespace TestTaxi.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.ClientID = new SelectList(db.Clients, "Id", "SecondName");
-            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "SecondName");
-            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber");
-            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id");
+            ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName");
+            ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName");
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name");
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name");
             return View();
         }
 
@@ -65,8 +72,11 @@ namespace TestTaxi.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,status,ClientID,DriverID,ApplicationUserID")] Order order)
+        public ActionResult Create([Bind(Include = "Id,status,PhoneNumber,DateOrder,ClientID,DriverID,StreetFromID,StreetToID,StartValue,EndValue")] Order order)
         {
+            string idUser= User.Identity.GetUserId();
+            order.ApplicationUserID = idUser;
+            
             if (ModelState.IsValid)
             {
                 db.Orders.Add(order);
@@ -76,8 +86,8 @@ namespace TestTaxi.Controllers
 
             ViewBag.ClientID = new SelectList(db.Clients, "Id", "SecondName", order.ClientID);
             ViewBag.DriverID = new SelectList(db.Drivers, "Id", "SecondName", order.DriverID);
-            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber", order.Id);
-            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name", order.StreetFromID);
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name", order.StreetToID);
             return View(order);
         }
 
@@ -95,8 +105,8 @@ namespace TestTaxi.Controllers
             }
             ViewBag.ClientID = new SelectList(db.Clients, "Id", "SecondName", order.ClientID);
             ViewBag.DriverID = new SelectList(db.Drivers, "Id", "SecondName", order.DriverID);
-            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "Id", order.Id);
-            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name", order.StreetFromID);
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name", order.StreetToID);
             return View(order);
         }
 
@@ -105,8 +115,10 @@ namespace TestTaxi.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,status,ClientID,DriverID,ApplicationUserID")] Order order)
+        public ActionResult Edit([Bind(Include = "Id,status,PhoneNumber,DateOrder,ClientID,DriverID,StreetFromID,StreetToID,StartValue,EndValue")] Order order)
         {
+            string idUser = User.Identity.GetUserId();
+            order.ApplicationUserID = idUser;
             if (ModelState.IsValid)
             {
                 db.Entry(order).State = EntityState.Modified;
@@ -115,8 +127,8 @@ namespace TestTaxi.Controllers
             }
             ViewBag.ClientID = new SelectList(db.Clients, "Id", "FirstName", order.ClientID);
             ViewBag.DriverID = new SelectList(db.Drivers, "Id", "FirstName", order.DriverID);
-            ViewBag.Id = new SelectList(db.LocationOrders, "Id", "PhoneNumber", order.Id);
-            ViewBag.Id = new SelectList(db.ValueTaximeters, "Id", "Id", order.Id);
+            ViewBag.StreetFromID = new SelectList(db.Streets, "Id", "Name", order.StreetFromID);
+            ViewBag.StreetToID = new SelectList(db.Streets, "Id", "Name", order.StreetToID);
             return View(order);
         }
 
