@@ -2,50 +2,65 @@
 @{
     ViewBag.Title = "Такси менеджер";
 }
-
-<div class="jumbotron">
-    <h1>Такси менеджер</h1>
-    <p class="lead">@*<img src="" />*@ </p>
-    @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+@Styles.Render("~/Content/style.css")
+<div  class="row">
+    <div class="col-md-12">
+        <p>
+            <div class="image">
+                <img alt="Taxi image" src="~/Resources/MainTaxiWalper.png" />
+                <h1 class="innertext"><span>Такси менеджер</span></h1>
+            </div>
+        </p>
+        @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    </div>
 </div>
 @using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Оформить заказ</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p>
-                @Html.ActionLink("Просмотреть", "Index", "Orders", null, htmlAttributes: new { @class = "btn btn-default" })
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Водители</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p>@Html.ActionLink("Просмотреть", "Index", "Drivers", null, htmlAttributes: new { @class = "btn btn-default" })</p>
-        </div>
-        <div class="col-md-4">
-            <h2>Автопарк</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p>@Html.ActionLink("Просмотреть", "Index", "Cars", null, htmlAttributes: new { @class = "btn btn-default" })</p>
-        </div>
-    </div><div class="row">
-        <div class="col-md-4">
-            <h2>Клиенты</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p>
-                @Html.ActionLink("Просмотреть", "Index", "Orders", null, htmlAttributes: new { @class = "btn btn-default" })
-            </p>
-        </div>
 
+    <div class="row">
+        <div class="col-md-4 col-xs-6">
+            <div class="selectbox">
+                <img alt="Taxi image" src="~/Resources/order.png" />
+                <h1 class="innertext-to-smal"><span>Оформить заказ</span></h1>
+                <p class="btn-on-image">
+                    @Html.ActionLink("Перейти", "Index", "Orders", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+                </p>
+
+            </div>
+
+        </div>
+        <div class="col-md-4 col-xs-6">
+            <div class="selectbox">
+                <img alt="Taxi image" src="~/Resources/taxi_driver.png" />
+                <h1 class="innertext-to-smal"><span>Водители</span></h1>
+                <p>@Html.ActionLink("Перейти", "Index", "Drivers", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })</p>
+            </div>
+
+
+        </div>
+        <div class="col-md-4 col-xs-6">
+            <div class="selectbox">
+            <img alt="Taxi image" src="~/Resources/transport.png" />
+            <h1 class="innertext-to-smal">
+                <span>Автопарк</span>
+            </h1>
+            <p>@Html.ActionLink("Перейти", "Index", "Cars", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })</p>
+        </div>
+    </div>
+
+    </div><div class="row">
+              <div class="col-md-4 col-xs-6">
+                  <div class="selectbox">
+                      <img alt="Taxi image" src="~/Resources/clients.png" />
+                      <h1 class="innertext-to-smal">
+                          <span>Клиенты</span>
+                      </h1>
+                      <p>
+                          @Html.ActionLink("Перейти", "Index", "Orders", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+                      </p>
+                  </div>
+              </div>
     </div>
 
 }

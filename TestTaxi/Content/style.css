@@ -1,0 +1,44 @@
+﻿.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+img{
+    width:100%;
+    border-radius:10px;
+}
+.innertext{
+   position: absolute; 
+   top: 50%; 
+   left: 0; 
+   width: 100%; 
+}
+
+.innertext-to-smal span{
+     color: white; 
+   font-family:Helvetica, Sans-Serif; 
+   font-weight: bold ;
+   font-size: 2vw;
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+   display:block;
+   margin-bottom:5px;
+}
+
+.innertext span { 
+   color: white; 
+   font-family:Helvetica, Sans-Serif; 
+   font-weight: bold ;
+   font-size: 7vw;
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+   display:block
+}
+
+.selectbox{
+     background: rgba(20, 72, 154, 0.20);
+      border-radius:10px;
+}
