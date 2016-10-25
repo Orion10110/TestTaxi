@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="6ebbb558-0e79-4088-8dee-c5a6fc77fa5c"
+  name="ModelingProjectTaxi" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="c1c3c6dd-c6f0-4757-97ee-4b45c0877293"
+        name="Пользователь"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8e5bc38f-045e-4aad-ba55-3cc94538708f"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Работа с заказами"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1c95bfc9-0952-4668-99b7-2920d637908e"
+              LastKnownName="Управление заказами"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b072acac-f4bf-4055-bb99-ea4e45eb5179"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d4b140a5-6294-464c-917d-a74fe9cd94f8"
+                  name="Работа с заказами"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a98149b1-7030-4360-bbc0-722203bb26c8"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Авторизация"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="44370928-4fdd-46de-bd79-fe8bee1d5877"
+              LastKnownName="Авторизация"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="75ab50d0-84e4-4ded-8585-1fb62bea0dfe"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b024712e-3209-4306-8f9e-24438eea851b"
+                  name="Авторизация"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9d1ced3c-bd33-48c6-bfd9-a73b92db0094"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Регистрация"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d905b662-d166-4aa0-a2c8-a9d67bfb3558"
+              LastKnownName="Регистрация"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="db8def8f-eaf5-47b2-bae4-af85ee2f1d04"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d23ca399-645f-4498-9750-7e75442c2ff4"
+                  name="Регистрация"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="afa2c027-0bf2-4cca-bf18-bd2b75cd50a8"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Формирование отчета"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3597dbb6-173b-4105-9b80-64b5aafb1dec"
+              LastKnownName="Формирование отчета"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="14626dfe-6174-47c5-9887-09eb60aa9229"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ba5647a3-c9c2-40f6-97de-2c630d1f81b9"
+                  name="Формирование отчета"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="76a2a834-50e7-4e3c-931c-6d5790f9accd"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Работа с водителями"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0d86d0ed-2d37-49b3-8f7f-ac47665ae741"
+              LastKnownName="Работа с водителями"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="256b306f-ecc6-40ab-a0d1-6ae34ffd7ee4"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="db90333e-27b1-4237-b44b-e8307f938e23"
+                  name="Работа с водителями"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5f8fa063-a447-4cce-a63b-223cbd34331e"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Работа с клиентами"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="deeda0ca-c7a2-4cc3-8c61-12c8c5b99974"
+              LastKnownName="Работа с клиентами"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c9dc5778-c212-4107-8d8c-ac5d1aceb5b1"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7b9be058-d8c0-4b88-ad73-4db9f6df20ef"
+                  name="Работа с клиентами"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="232651e5-e267-42d5-b04b-011fdff7219e"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Работа с машинами"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="eab2a5ec-cb4c-4e8a-8de1-244a808f08e3"
+              LastKnownName="Работа с машинами"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2fc6c783-15e6-44be-a171-0960ba798f47"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2e0604b5-d07b-4a27-be97-f469f0e009f8"
+                  name="Работа с машинами"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="44370928-4fdd-46de-bd79-fe8bee1d5877"
+        name="Авторизация"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="a851128e-d013-4c8b-b8a8-b38bc7be1bb0">
+            <useCaseMoniker
+              Id="1c95bfc9-0952-4668-99b7-2920d637908e"
+              LastKnownName="Управление заказами"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d905b662-d166-4aa0-a2c8-a9d67bfb3558"
+        name="Регистрация"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="a4285ed0-ac1f-47e0-bbe8-bcec4f9ea118">
+            <useCaseMoniker
+              Id="44370928-4fdd-46de-bd79-fe8bee1d5877"
+              LastKnownName="Авторизация"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3597dbb6-173b-4105-9b80-64b5aafb1dec"
+        name="Формирование отчета"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="5bd49562-3231-4580-aeb1-bebc0b5b9db3">
+            <useCaseMoniker
+              Id="44370928-4fdd-46de-bd79-fe8bee1d5877"
+              LastKnownName="Авторизация"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8ac7a006-08fa-441e-b6b4-989a0d2522ca"
+        name="Оформление заказа"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b617eb25-fc62-4d4c-a8e1-70417cc32832"
+        name="Редактирование заказа"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e10b4829-9949-445b-8f4b-ef22d5be6068"
+        name="Удаление заказа"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0db8039e-5097-4e15-b675-89fab62a3f52"
+        name="Просмотр заказов"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1c95bfc9-0952-4668-99b7-2920d637908e"
+        name="Управление заказами"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="5bb35efc-73d3-44e0-88b3-218446f8bf86"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c95e836d-39c4-4f2c-bbc6-fc4662246373"
+              LastKnownName="Работа с данными"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </generalization>
+        </generalsInternal>
+        <additions>
+          <include
+            Id="ba9a75b5-c8a7-40e4-b52c-68015dd7810e">
+            <useCaseMoniker
+              Id="e10b4829-9949-445b-8f4b-ef22d5be6068"
+              LastKnownName="Удаление заказа"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+          <include
+            Id="35c2803a-5b52-495d-9b4b-4a22d6f88123">
+            <useCaseMoniker
+              Id="8ac7a006-08fa-441e-b6b4-989a0d2522ca"
+              LastKnownName="Оформление заказа"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+          <include
+            Id="10fd87ee-9d2b-42a2-a3bd-a863d8f0f751">
+            <useCaseMoniker
+              Id="b617eb25-fc62-4d4c-a8e1-70417cc32832"
+              LastKnownName="Редактирование заказа"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+          <include
+            Id="64c8edcd-68cf-4136-b3a3-f9d85693b9df">
+            <useCaseMoniker
+              Id="0db8039e-5097-4e15-b675-89fab62a3f52"
+              LastKnownName="Просмотр заказов"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="023a5fc3-c604-4da0-9794-a358cf558c66"
+        name="Работа с водителями"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="560d39d7-ddd9-4680-9e1b-04632bc35b31"
+        name="Удаление водителей"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="82fd4195-4bf9-4444-ac29-de0305003d73"
+        name="Редактирование водителей"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a310ac8d-b14d-4f37-8619-87df511728e4"
+        name="Добавление водителей"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c95e836d-39c4-4f2c-bbc6-fc4662246373"
+        name="Работа с данными"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="2c82d655-0488-49b0-9fa5-d6ba698b7dab">
+            <useCaseMoniker
+              Id="ea60bf1d-9664-499e-bcb9-122dfa77068e"
+              LastKnownName="Просмотр данных"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+          <include
+            Id="a80d8211-1dce-47e8-b855-07c69dd6ac86">
+            <useCaseMoniker
+              Id="7faa96f7-878a-495e-8e00-21059c56c5e2"
+              LastKnownName="Удаление данных"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+          <include
+            Id="f5094abd-f562-42b3-a6c6-85d4561f6a52">
+            <useCaseMoniker
+              Id="e8a4f39a-9e7b-4616-8075-51e9739bb144"
+              LastKnownName="Редактирование данных"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+          <include
+            Id="63ef0bdc-09c1-4944-b7e1-f77eda03e84c">
+            <useCaseMoniker
+              Id="f3e28301-2330-49f2-bc23-2b3fd29ceeef"
+              LastKnownName="Добавление данных"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0d86d0ed-2d37-49b3-8f7f-ac47665ae741"
+        name="Работа с водителями"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="d6a6fcf8-5e4e-4eb2-82f2-67671f1fb9e5"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c95e836d-39c4-4f2c-bbc6-fc4662246373"
+              LastKnownName="Работа с данными"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3b49cf30-4858-4237-a2b5-4b5f8faf6570"
+        name="UseCase1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="deeda0ca-c7a2-4cc3-8c61-12c8c5b99974"
+        name="Работа с клиентами"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="006f8754-d90e-4221-8f1a-4815eda6b3b2"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c95e836d-39c4-4f2c-bbc6-fc4662246373"
+              LastKnownName="Работа с данными"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="eab2a5ec-cb4c-4e8a-8de1-244a808f08e3"
+        name="Работа с машинами"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="f6da00fa-ba12-415c-a192-11d565eb281b"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c95e836d-39c4-4f2c-bbc6-fc4662246373"
+              LastKnownName="Работа с данными"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </generalization>
+        </generalsInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ea60bf1d-9664-499e-bcb9-122dfa77068e"
+        name="Просмотр данных"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7faa96f7-878a-495e-8e00-21059c56c5e2"
+        name="Удаление данных"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f3e28301-2330-49f2-bc23-2b3fd29ceeef"
+        name="Добавление данных"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e8a4f39a-9e7b-4616-8075-51e9739bb144"
+        name="Редактирование данных"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

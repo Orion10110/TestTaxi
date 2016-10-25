@@ -205,6 +205,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\StreetsController.cs" />
     <Compile Include="Controllers\TypeCarsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -298,6 +299,9 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Resources\brand.png" />
+    <Content Include="Resources\district.png" />
+    <Content Include="Resources\strets.png" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -424,6 +428,7 @@
     <Content Include="Views\ValueTaximeters\Details.cshtml" />
     <Content Include="Views\ValueTaximeters\Edit.cshtml" />
     <Content Include="Views\ValueTaximeters\Delete.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610151857244_InitialCreate.resx">

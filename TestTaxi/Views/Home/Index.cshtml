@@ -61,6 +61,42 @@
                       </p>
                   </div>
               </div>
+              <div class="col-md-4 col-xs-6">
+                  <div class="selectbox">
+                      <img alt="Taxi image" src="~/Resources/strets.png" />
+                      <h1 class="innertext-to-smal">
+                          <span>Улицы</span>
+                      </h1>
+                      <p>
+                          @Html.ActionLink("Перейти", "Index", "Streets", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+                      </p>
+                  </div>
+              </div>
+              <div class="col-md-4 col-xs-6">
+                  <div class="selectbox">
+                      <img alt="Taxi image" src="~/Resources/district.png" />
+                      <h1 class="innertext-to-smal">
+                          <span>Районы</span>
+                      </h1>
+                      <p>
+                          @Html.ActionLink("Перейти", "Index", "Districts", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+                      </p>
+                  </div>
+              </div>
+    </div>
+  
+    <div class="row">
+        <div class="col-md-4 col-xs-6">
+            <div class="selectbox">
+                <img alt="Taxi image" src="~/Resources/brand.png" />
+                <h1 class="innertext-to-smal">
+                    <span>Марки</span>
+                </h1>
+                <p>
+                    @Html.ActionLink("Перейти", "Index", "Brands", null, htmlAttributes: new { @class = "btn btn-primary btn-lg" })
+                </p>
+            </div>
+        </div>
     </div>
 
 }
