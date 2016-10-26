@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
   dslVersion="1.0.0.0"
   Id="6ebbb558-0e79-4088-8dee-c5a6fc77fa5c"
   name="ModelingProjectTaxi" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -582,6 +582,996 @@
         name="Редактирование данных"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2cf87645-5be9-4828-b7d6-d82dec15f641"
+        name="Котескт связывание с БД"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d2a8e346-7f31-4d54-8066-fbe7b9239840"
+            name="Car"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="abc4a928-d7d9-4373-9a57-5d0ecbedb3a0"
+            name="Brand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c4276578-2127-4244-a380-40a23cc1a4f4"
+            name="Client"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="51187ba5-d7d4-4f01-a603-c1d6d82a812d"
+            name="Discount"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f1ce608c-b738-45d8-a50d-6868a87f695c"
+            name="Driver"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5c688f84-8b2c-4673-8545-8e6bf8afc5d1"
+            name="District"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="92184797-376f-4d17-ad0f-1e28aced2df5"
+            name="Order"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9b15b197-e98b-49b1-b4a7-465aecd5dc24"
+            name="Status"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e80f5de4-dac1-4a96-82be-4b30387cdf6f"
+            name="Street"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c6165bef-d8f1-4eeb-96a2-fed13cc339a9"
+            name="TypeCar"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="628f9ff2-8480-48dc-9d7f-2b0c344b7f11"
+            name="Application_user"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3a84901e-8dc2-4f83-9e19-8a7fbfceb43d"
+        name="Model"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="0c533930-687e-4a40-8a8c-60ee13486272">
+            <classMoniker
+              Id="2cf87645-5be9-4828-b7d6-d82dec15f641"
+              LastKnownName="Котескт связывание с БД"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="828e7707-c0d0-41e3-9285-de509c59db37"
+            name="Application_user"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="91265539-086b-4a0b-95ab-782a0eba0514"
+            name="Brand"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="71e555ac-02b4-494f-82dc-23be18764ea9"
+            name="Car"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a2ef5c3e-d16f-421d-bd3d-766b30cb76dd"
+            name="Client"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="fc97ba20-7ab2-44be-af61-a41f5c8bd6f2"
+            name="Discount"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="0c984e81-8d75-4ce1-9b50-f79ec2a031e8"
+            name="District"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="493d5004-4af3-4235-a8f3-d89003104ea0"
+            name="Driver"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ed6a1014-117e-42eb-9106-8245ecc6944a"
+            name="Order"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="16b1446a-f50a-497b-99d2-70aef2fe0fa6"
+            name="Status"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="835fbe80-d51f-4757-b796-c378fed4b422"
+            name="Street"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="427c4b7f-8cf0-414b-ad34-300981860ff8"
+            name="TypeCar"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1e89c3b2-0b2f-425b-bb99-90344cd3283c"
+        name="Controller"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="024e3592-98b1-40ef-bf46-82c499641b5a">
+            <classMoniker
+              Id="3a84901e-8dc2-4f83-9e19-8a7fbfceb43d"
+              LastKnownName="Model"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="bfe6c7b5-4f20-4829-a324-ee110655b5d9"
+            name="Application_usersController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="681d5207-ab7d-43a5-a756-19ac4dee03f8"
+            name="BrandsController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="252285ae-cde4-4317-b63e-da9980f1010f"
+            name="CarsController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d3caa167-4f9c-4fae-8eea-4d5b895d9c50"
+            name="ClientsController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5f151f66-61b1-4614-9b85-8b21f013dc06"
+            name="DiscountsController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="acef4a60-bb05-4fb5-975d-2207404c2f50"
+            name="DistrictsController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="00a2590f-a377-471e-befb-83fa525322bf"
+            name="DriversController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="18a41f57-3d8f-408e-9ae5-38b9674fea73"
+            name="OrdersController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="df278c1c-4a5d-4e4f-9f93-ca48243b51a5"
+            name="StatussController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="33d8b51b-8743-45b9-b863-7e426d29be23"
+            name="StreetsController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1b640acc-f9bc-4e99-81b3-51ca96e13f5f"
+            name="TypeCarsController"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5b98978e-2c73-4f28-858a-b8dd1923d9d0"
+        name="View"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="10fb4fe9-060f-4fb4-8501-30609dc15689">
+            <classMoniker
+              Id="1e89c3b2-0b2f-425b-bb99-90344cd3283c"
+              LastKnownName="Controller"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="5d6bac9a-f7b4-486b-aedf-f827220dc7cd"
+            name="Страницы"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="105be6d8-3599-485f-906e-8755d18d644c"
+            name="Index"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ace0f732-4741-49d1-a615-9b390219b41d"
+            name="Create"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f24ec122-467a-40b9-9162-b3cbf0131f45"
+            name="Details"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="386a809a-6e06-4ccc-bda0-eeb8bce37cb7"
+            name="Edit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0b64ab7d-27b5-468a-a0a7-139a390ec018"
+            name="Delete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8e1419e3-58e7-47c4-a033-b77b42a6bf31"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c6d98baa-2031-401d-a533-10788650ffe3"
+        name="Class11"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e8958d16-ef25-43c3-a7e4-9196f22d6933"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bf92dfdc-732e-404e-be31-210bc6ea05f0"
+        name="Class13"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="2927c053-f770-4898-8164-ad48face6980"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="cd394367-856b-4245-9414-678f91bec0ef"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1bc30cb2-b293-411f-8aaa-ee5021904ece"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="64b0cab1-0998-408a-849c-85da69ae7edf"
+                  LastKnownName="Заходит на сайт"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="64b0cab1-0998-408a-849c-85da69ae7edf"
+            name="Заходит на сайт"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="61fbc602-be12-42bf-859f-03c8c9a84021"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="3d15bbe6-eecb-4da4-a8a6-aa42a58e131d"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9fbe9e52-2e1d-4cca-a437-a37df3f484d0"
+            name="Регистрируется"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="35e714d6-aff4-42b2-a3d3-37140f6b9bf7"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c33ec9cd-d905-44fa-a302-97dc30f2537f"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="05389239-4010-45cd-a631-825455f7cdae"
+            name="Авторизируетя"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e97b71bb-2f2f-4357-973a-382ac08935a6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b4ecba9e-017e-4485-b006-80039d4d661c"
+                  LastKnownName="Работает с приложением"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="3d15bbe6-eecb-4da4-a8a6-aa42a58e131d"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="79536c69-193f-4d52-8a48-50dae1526fec"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9fbe9e52-2e1d-4cca-a437-a37df3f484d0"
+                  LastKnownName="Регистрируется"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="f7d11c41-4b3f-4691-9c7c-859a16546508"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c33ec9cd-d905-44fa-a302-97dc30f2537f"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="c33ec9cd-d905-44fa-a302-97dc30f2537f"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8d7aa832-a07c-4960-aef5-64605b09487c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="05389239-4010-45cd-a631-825455f7cdae"
+                  LastKnownName="Авторизируетя"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="010a4cdc-c0be-43ec-bca9-cf101dfe64a8"
+            name="Работает с заказами"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="bd0b2a2e-7d10-48cc-9390-31748b21aa71"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="f5340425-4a8a-44c2-a1c9-c24ff3f61c40"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="1df04a0f-8bf6-456a-8235-288b640dabac"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="139c4657-3645-4c05-99c3-839d5b3284df"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="61d587d9-bf38-488d-b33a-8d4112c08ac2"
+                  LastKnownName="Работает с водителями"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1feee91b-21ec-4804-8647-56c733571009"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d6b1da91-153a-4cc4-aac5-56d271f90098"
+                  LastKnownName="Работает с клиентами"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="aef68344-1b40-474a-948a-495608f47fe8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7eac05d4-66ba-475c-a88b-63e11cb09d70"
+                  LastKnownName="Работает с улицами"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="f7ae21ab-6e26-4848-9bb1-30d068692e46"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2b7e5a47-78dc-4657-b935-349c7a4ece6d"
+                  LastKnownName="Оформление отчета"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c13b301f-a377-4534-8547-5bb60e6e5da2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fa2cd2a8-9b64-411e-b0a1-a8e079ce2881"
+                  LastKnownName="Работает с клиентами"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="31f881e8-97cc-4be8-bc16-79a5c85cdb7a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="010a4cdc-c0be-43ec-bca9-cf101dfe64a8"
+                  LastKnownName="Работает с заказами"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="fa2cd2a8-9b64-411e-b0a1-a8e079ce2881"
+            name="Работает с клиентами"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c8675298-1773-49c4-8276-07f25ec22c65"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="f5340425-4a8a-44c2-a1c9-c24ff3f61c40"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="61d587d9-bf38-488d-b33a-8d4112c08ac2"
+            name="Работает с водителями"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ad534e09-e0ff-4c6b-bbc9-cb12da1d0352"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="f5340425-4a8a-44c2-a1c9-c24ff3f61c40"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="d6b1da91-153a-4cc4-aac5-56d271f90098"
+            name="Работает с клиентами"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="87fa8b8d-3c57-47d7-b9e3-e2da81517d05"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="f5340425-4a8a-44c2-a1c9-c24ff3f61c40"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7eac05d4-66ba-475c-a88b-63e11cb09d70"
+            name="Работает с улицами"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7b90b90f-678a-46fa-b557-7a607cd5057d"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="f5340425-4a8a-44c2-a1c9-c24ff3f61c40"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2b7e5a47-78dc-4657-b935-349c7a4ece6d"
+            name="Оформление отчета"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="48f1d44e-fddf-4960-99bf-b37cd594d7cd"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="f5340425-4a8a-44c2-a1c9-c24ff3f61c40"
+                  LastKnownName="Join1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="f5340425-4a8a-44c2-a1c9-c24ff3f61c40"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="88ed9c5e-49b4-4618-a0e1-15a348cf9786"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f41d0479-065f-4227-9912-e78ca454e7bd"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction
+            Id="d72f4b5c-52e9-497d-9c05-26cb0c4e5eb3"
+            name="Выходит из акаунта"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3fb5292e-6353-44b7-b596-0f7977eca887"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8e7952e6-b304-484d-b46b-8b683dbdc489"
+                  LastKnownName="Покидает сайт"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f41d0479-065f-4227-9912-e78ca454e7bd"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b5927ac3-82e7-43f2-9e4b-48dddfaaf0c2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b4ecba9e-017e-4485-b006-80039d4d661c"
+                  LastKnownName="Работает с приложением"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="30cea6da-e3d5-448c-b3e4-2ca08301d966"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d72f4b5c-52e9-497d-9c05-26cb0c4e5eb3"
+                  LastKnownName="Выходит из акаунта"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="b4ecba9e-017e-4485-b006-80039d4d661c"
+            name="Работает с приложением"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="088c2180-959c-4afc-8315-bec5b65ca36d"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="1df04a0f-8bf6-456a-8235-288b640dabac"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8e7952e6-b304-484d-b46b-8b683dbdc489"
+            name="Покидает сайт"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a79af243-7bf0-4a0b-a7b1-84218f9c3049"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="bc370090-d299-43f4-ad6c-dd8b98c9f121"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="ModelingProjectTaxi.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="bc370090-d299-43f4-ad6c-dd8b98c9f121"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="bec29660-bfd8-4ab2-98ca-a3a2bc1a7386"
+        name="База данных Taxi"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="17544b87-38c1-4a80-be05-7d6ab90b761a"
+        name="ORM Entity Framework"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="417d4c51-2895-409f-8a5c-11a7f49c8867">
+            <componentMoniker
+              Id="bec29660-bfd8-4ab2-98ca-a3a2bc1a7386"
+              LastKnownName="База данных Taxi"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="a7b5e69f-6d1f-495d-8ba2-22f47cd6867c"
+        name="Классы приложения"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="b3ceaa3b-4cc4-44f7-82db-8084b476a110">
+            <componentMoniker
+              Id="17544b87-38c1-4a80-be05-7d6ab90b761a"
+              LastKnownName="ORM Entity Framework"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="230bbecf-860a-49f7-87f0-5a5bf1a65bca"
+        name="Контроллеры"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="f5495c01-f479-4fce-9010-680ba1487536">
+            <componentMoniker
+              Id="dd6da384-e08c-4e4d-8c3d-d6055d067e46"
+              LastKnownName="Модель"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="dd6da384-e08c-4e4d-8c3d-d6055d067e46"
+        name="Модель"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="1baa64ea-e0df-4c7a-a677-3757758809f0">
+            <componentMoniker
+              Id="a7b5e69f-6d1f-495d-8ba2-22f47cd6867c"
+              LastKnownName="Классы приложения"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="c1a744e5-c0a7-4fcd-adbf-d2a0658f0069"
+        name="Представление"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="f7469895-d8da-4f53-9fed-fe16bacea5ab">
+            <componentMoniker
+              Id="e85340a2-14c4-4877-822f-a623decc888f"
+              LastKnownName="CSS"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+          <dependency
+            Id="c39269de-3e3f-42e3-a819-ea017f06823f">
+            <componentMoniker
+              Id="210a439f-190b-457b-ade7-647fb2c7e4da"
+              LastKnownName="JavaScript"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+          <dependency
+            Id="e878b7fd-945a-4de9-a3c6-ae0b5ff1df94">
+            <componentMoniker
+              Id="230bbecf-860a-49f7-87f0-5a5bf1a65bca"
+              LastKnownName="Контроллеры"
+              LastKnownLocation="ModelingProjectTaxi.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="e85340a2-14c4-4877-822f-a623decc888f"
+        name="CSS"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="210a439f-190b-457b-ade7-647fb2c7e4da"
+        name="JavaScript"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

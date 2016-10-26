@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="fc63fa98-e08a-4fa5-acd8-2a921bd07c04" name="UMLClassDiagram1" linkedPackageId="04cf1eff-6fe3-480d-8c5b-fe7b501fbb45" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="2ff69dd4-49eb-44ac-b9f1-fbe7e10e5362">
+      <profileInstance Id="a0f1e6d3-e1fa-41a2-8860-0414900bc620" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6b6bf233-97c6-4a9f-a543-e3c8e595d084">
+      <profileInstance Id="70c0c68d-ca12-4def-9123-2ffa650f698b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="be1be40b-562d-45c8-8c17-7cf692f92817" name="Котескт связывание с БД" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2cf87645-5be9-4828-b7d6-d82dec15f641" />
+        <ownedAttributesInternal>
+          <property Id="517f932f-9e92-4020-a813-64c58a0362a0" name="Car" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d2a8e346-7f31-4d54-8066-fbe7b9239840" />
+          </property>
+          <property Id="0c4bb899-6d20-4c63-bec5-a045e1d61231" name="Brand" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="abc4a928-d7d9-4373-9a57-5d0ecbedb3a0" />
+          </property>
+          <property Id="675e2c2c-5ce7-4231-b818-c2d745ed260f" name="Client" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c4276578-2127-4244-a380-40a23cc1a4f4" />
+          </property>
+          <property Id="e090a0a6-a3bf-4df3-9437-b44ef2b32596" name="Discount" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="51187ba5-d7d4-4f01-a603-c1d6d82a812d" />
+          </property>
+          <property Id="6de6ab37-26f3-4b80-a16b-1f333f850a82" name="Driver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f1ce608c-b738-45d8-a50d-6868a87f695c" />
+          </property>
+          <property Id="41a1a279-1e24-40f9-84e5-05646cf60a8c" name="District" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5c688f84-8b2c-4673-8545-8e6bf8afc5d1" />
+          </property>
+          <property Id="58005a6a-42fe-4913-876f-7baffcf053c6" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="92184797-376f-4d17-ad0f-1e28aced2df5" />
+          </property>
+          <property Id="5c351528-8b5b-43ad-a1f4-c21e8c9d2c22" name="Status" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9b15b197-e98b-49b1-b4a7-465aecd5dc24" />
+          </property>
+          <property Id="e14ebd0b-5bb8-4e96-b50e-7aac4ddfb60b" name="Street" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e80f5de4-dac1-4a96-82be-4b30387cdf6f" />
+          </property>
+          <property Id="0b72e6e8-a890-4d9d-a8f1-c423a3773a64" name="TypeCar" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c6165bef-d8f1-4eeb-96a2-fed13cc339a9" />
+          </property>
+          <property Id="dca12a88-dae5-4788-aed3-88b988f41299" name="Application_user" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="628f9ff2-8480-48dc-9d7f-2b0c344b7f11" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="36db90b8-3949-4002-ba52-6badedb7d4ee" name="Model" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3a84901e-8dc2-4f83-9e19-8a7fbfceb43d" />
+        <suppliersInternal>
+          <dependency Id="fc107bc2-28e4-41cf-bd8f-482e0987551b">
+            <classMoniker Id="be1be40b-562d-45c8-8c17-7cf692f92817" LastKnownName="Котескт связывание с БД" />
+            <elementDefinition Id="0c533930-687e-4a40-8a8c-60ee13486272" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="755cdfb4-34e0-4bd3-852f-7986a7ebe2c4" name="Application_user" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="828e7707-c0d0-41e3-9285-de509c59db37" />
+          </property>
+          <property Id="e6f86f7a-492b-4061-a5fa-0d95f9594822" name="Brand" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="91265539-086b-4a0b-95ab-782a0eba0514" />
+          </property>
+          <property Id="c2266794-ae23-4f43-97be-e3c45910ff01" name="Car" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="71e555ac-02b4-494f-82dc-23be18764ea9" />
+          </property>
+          <property Id="3929a566-cfc8-4ebc-bce5-a16160805d9f" name="Client" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a2ef5c3e-d16f-421d-bd3d-766b30cb76dd" />
+          </property>
+          <property Id="a909f86d-8313-4601-afbb-6d64dcebcfe8" name="Discount" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fc97ba20-7ab2-44be-af61-a41f5c8bd6f2" />
+          </property>
+          <property Id="b2485a2d-1d4b-4769-8e26-d25430ac958f" name="District" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0c984e81-8d75-4ce1-9b50-f79ec2a031e8" />
+          </property>
+          <property Id="42e47d85-0591-4067-a27a-d24d50800814" name="Driver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="493d5004-4af3-4235-a8f3-d89003104ea0" />
+          </property>
+          <property Id="ff8e7951-bf07-4e7c-ae0a-8dd6f6faf1d7" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ed6a1014-117e-42eb-9106-8245ecc6944a" />
+          </property>
+          <property Id="833acebc-a8e6-4063-bedb-52bd9bfbe0d7" name="Status" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="16b1446a-f50a-497b-99d2-70aef2fe0fa6" />
+          </property>
+          <property Id="d0396efb-2d04-481f-81da-b3a9023dcdcd" name="Street" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="835fbe80-d51f-4757-b796-c378fed4b422" />
+          </property>
+          <property Id="c4abd76e-9aeb-4723-871d-ad042da5298a" name="TypeCar" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="427c4b7f-8cf0-414b-ad34-300981860ff8" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c1f41466-b6f9-4ef3-9a10-0e495cbc0fca" name="Controller" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1e89c3b2-0b2f-425b-bb99-90344cd3283c" />
+        <suppliersInternal>
+          <dependency Id="d7bdb1d6-c2cb-445d-a48d-dd0db92f9747">
+            <classMoniker Id="36db90b8-3949-4002-ba52-6badedb7d4ee" LastKnownName="Model" />
+            <elementDefinition Id="024e3592-98b1-40ef-bf46-82c499641b5a" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="77a54bbf-22ec-4b54-bde4-c01232621604" name="Application_usersController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bfe6c7b5-4f20-4829-a324-ee110655b5d9" />
+          </property>
+          <property Id="a542e693-6c6c-45fa-ad6f-a1dec7565ad7" name="BrandsController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="681d5207-ab7d-43a5-a756-19ac4dee03f8" />
+          </property>
+          <property Id="8794e9fb-102c-4f4c-a9f3-986b287908c2" name="CarsController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="252285ae-cde4-4317-b63e-da9980f1010f" />
+          </property>
+          <property Id="66808514-af40-452b-9766-931e57b614c8" name="ClientsController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d3caa167-4f9c-4fae-8eea-4d5b895d9c50" />
+          </property>
+          <property Id="c0d7682b-18d8-4599-9811-0a030b93fccb" name="DiscountsController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5f151f66-61b1-4614-9b85-8b21f013dc06" />
+          </property>
+          <property Id="3935763a-68ef-4c46-a80d-2b8411cfeeee" name="DistrictsController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="acef4a60-bb05-4fb5-975d-2207404c2f50" />
+          </property>
+          <property Id="a13ae5d7-1e31-42b9-9cb5-164e77e31ae3" name="DriversController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="00a2590f-a377-471e-befb-83fa525322bf" />
+          </property>
+          <property Id="25d43afb-832c-424f-8732-c32d53f88307" name="OrdersController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="18a41f57-3d8f-408e-9ae5-38b9674fea73" />
+          </property>
+          <property Id="8bbea6a0-e33f-4e7e-9ca6-560e836bddc9" name="StatussController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="df278c1c-4a5d-4e4f-9f93-ca48243b51a5" />
+          </property>
+          <property Id="fe250b02-0c86-4b7f-a66f-3c594aafee7f" name="StreetsController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="33d8b51b-8743-45b9-b863-7e426d29be23" />
+          </property>
+          <property Id="0aff8612-0735-4df4-96bb-70ddcd880458" name="TypeCarsController" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1b640acc-f9bc-4e99-81b3-51ca96e13f5f" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cf142ac8-1ab0-4dd7-b51c-3616eb080d1d" name="View" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5b98978e-2c73-4f28-858a-b8dd1923d9d0" />
+        <suppliersInternal>
+          <dependency Id="fde5075c-2b66-439f-9cb2-e467d2cddb9b">
+            <classMoniker Id="c1f41466-b6f9-4ef3-9a10-0e495cbc0fca" LastKnownName="Controller" />
+            <elementDefinition Id="10fb4fe9-060f-4fb4-8501-30609dc15689" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="0b87c901-4942-4944-9cde-dbe2354c9e93" name="Страницы" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5d6bac9a-f7b4-486b-aedf-f827220dc7cd" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3fc830f5-1058-4a1f-820e-7e51089591b7" name="Index" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="105be6d8-3599-485f-906e-8755d18d644c" />
+          </operation>
+          <operation Id="c4182f64-4640-4926-8b11-3947708433a2" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ace0f732-4741-49d1-a615-9b390219b41d" />
+          </operation>
+          <operation Id="983c39eb-a4ab-4acb-a5fa-6309807b2cfd" name="Details" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f24ec122-467a-40b9-9162-b3cbf0131f45" />
+          </operation>
+          <operation Id="d54312d5-7e37-4c03-bf54-0ccae4a064a2" name="Edit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="386a809a-6e06-4ccc-bda0-eeb8bce37cb7" />
+          </operation>
+          <operation Id="02990fe1-0f8c-4873-9e3b-6f05dd1823db" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b64ab7d-27b5-468a-a0a7-139a390ec018" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="04cf1eff-6fe3-480d-8c5b-fe7b501fbb45" name="ModelingProjectTaxi">
+    <elementDefinition Id="6ebbb558-0e79-4088-8dee-c5a6fc77fa5c" />
+  </package>
+</logicalClassDesignerModel>
